@@ -1,0 +1,30 @@
+{
+  "name": "prototype_datingapp",
+  "version": "1.0.0",
+  "description": "dating app",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ralfz123/prototype_datingapp.git"
+  },
+  "keywords": [
+    "dating",
+    "app",
+    "js",
+    "node",
+    "express"
+  ],
+  "author": "ralfz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ralfz123/prototype_datingapp/issues"
+  },
+  "homepage": "https://github.com/ralfz123/prototype_datingapp#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
