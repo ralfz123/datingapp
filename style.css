@@ -1,0 +1,104 @@
+/* Mobile first */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body{
+width: 100vw;
+background-color: white;
+}
+
+
+/* iPad///Desktop Body*/
+@media only screen and (min-width: 600px) {
+    body {
+        background-color: white;
+        width: 100vw;
+    }
+}
+
+
+
+/* Header */
+header{
+
+}
+
+/* Nav */
+header nav{
+
+}
+
+/* User */
+
+
+
+div{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100vw;
+    margin: 0px;
+    max-width: 200px;
+    padding: 10px;
+    border: 2px dotted green;
+}
+
+div a{
+    text-decoration: none;
+    cursor: pointer;
+    margin: 0px 0px;
+    padding: 0px 0px;
+    background-color: blue;
+    width: 50%;
+    
+}
+
+div a section {
+    cursor: pointer;
+    margin-right: 20px;
+    margin-top: 20px;
+    padding: 0px 0px;
+    border: 1px solid red;
+    width: 200px;
+    max-width: 200px;
+    background-color: grey;
+}
+
+div a section h3,ul{
+    text-decoration: rgb(154, 100, 182);
+}
+
+div a section img{
+    width: 50%;
+    height: 50%;
+    margin-right: 0px;
+}
+
+
+
+/* naam op user profile */
+h2{
+    margin-top: 20px;
+}
+
+.fotoprofiel{
+    width: 70%;
+    height: 70%;  
+    text-align: center; 
+    display: block;
+    /* margin-left: auto; */
+    margin-right: auto;
+}
+
+ol{
+background-color: darkorchid;
+margin-top: 20px;
+}
