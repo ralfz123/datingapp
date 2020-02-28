@@ -1,7 +1,7 @@
 /* Mobile first */
 
 * {
-    margin: 0px;
+    margin: 0px; 
     padding: 0px;
     box-sizing: border-box;
 }
@@ -10,14 +10,295 @@ html {
     font-size: 16px;
 }
 
-body{
-width: 100vw;
-background-color: white;
-font-family: omnes-pro, sans-serif;
-font-style: normal;
-font-weight: 100;
+body {
+    width: 100vw;
+    background-color: white;
+    font-family: omnes-pro, sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    margin: 5px 10px; 
+    text-align: center;
 }
 
+h1 {
+    text-align: center;
+    font-weight: 300;
+
+}
+.lid{
+    max-width: 60%;
+    margin: auto;
+}
+
+.ondertitel {
+    font-family: omnes-pro, sans-serif;
+    font-weight: normal;
+    margin-top: 10px;
+}
+
+
+form {
+    margin: 10px 0px;
+}
+
+fieldset {
+    border: none;
+    display: flex;
+}
+
+fieldset.p1{
+    border: none;
+    display: flex;
+    text-align: left;
+    display: flex;
+}
+
+
+legend{
+    display: none;
+}
+
+label:first-child, label:nth-child(2), label:nth-child(3), label:nth-child(4), label:nth-child(5){
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: 'Kalam';
+    font-weight: 300;
+    margin-top: 10px;
+    font-size: 2rem;
+    /* cursor: pointer; */
+}
+
+/* .p1 label:nth-child(3), label:nth-child(4), label:nth-child(5) */
+
+input[type="radio"].toggle {
+  display: none;
+}
+
+input[type="radio"].toggle:checked + label {
+  /* Do something special with the selected state */
+}
+
+
+form.p2 fieldset label{
+    max-width: 70%;
+    text-align: left;
+    /* background: red; */
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 50px 0px 10px 0px;
+    /* padding: 5px 50px 10px 5px; */
+    border: 1px solid transparent;
+    /* border-bottom: 1px solid #FD2755; */
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Dit is voor de radiobutton een button-look maken */
+/* .p1 label {
+    width:170px;
+    margin:4px;
+    background-color:#EFEFEF;
+    border-radius:4px;
+    border:1px solid #D0D0D0;
+    overflow:auto;
+
+}
+
+#donate label span {
+    text-align:center;
+    font-size: 32px;
+    padding:13px 0px;
+    display:block;
+}
+
+#donate label input {
+    position:absolute;
+    top:-20px;
+}
+
+#donate input:checked + span {
+    background-color:#404040;
+    color:#F7F7F7;
+} */
+
+
+form fieldset input{
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    background: transparent;
+    border: none;
+    border: 1px solid transparent;
+    padding: 5px 0psx 5px 0px;
+    border-bottom: 1px solid #FD2755;
+    font-size: 1rem;
+}
+
+form fieldset.p1 .firsttype{
+    text-align: left;
+    background: blue;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 5px 50px 10px 5px;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #FD2755;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+
+form.p2 fieldset input{
+    text-align: left;
+    /* background: blue; */
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 5px 50px 10px 5px;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #FD2755;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+
+form.p2 fieldset input:focus{
+    border: 1px solid #FD2755;
+    outline: none;
+    transition: ease-in-out 0.3s;
+}
+
+form.p2 fieldset input::placeholder{
+    color: rgba(92, 92, 92, 0.5);
+}
+
+/* pseudo class voor interactie */
+form input:focus{
+    border: 1px solid #FD2755;
+    outline: none;
+    transition: ease-in-out 0.3s;
+}
+
+form input.firsttype:focus{
+    border: 1px solid #FD2755;
+    outline: none;
+    transition: ease-in-out 0.3s;
+}
+
+
+button{
+    text-align: center;
+    margin: auto;
+    margin-top: 15px;
+    width: 50%;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 3px 3px 5px grey;
+    background-color: #FA2760;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+a {
+    font-size: 1rem;
+}
+
+.line{
+    border-bottom: 1px grey;
+    width: 50px;
+}
+
+
+h2{
+    font-family: 'Kalam';
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+
+.optionphoto{
+display: flex;
+max-width: 80%;
+border: 1px solid red;
+text-align: center;
+margin:auto;
+}
+
+.optionphoto img, .optionphoto p{
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.optionphoto img{
+    width: 30%;
+    height: 30%;
+    background-color: red;
+}
+
+ol{
+    max-width: 80%;
+    display: flex;
+    margin: auto;
+    background: brown;
+    /* min-width: 100%; */
+
+}
+
+ol li{
+    list-style-type: none;
+    color:blue;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+    border: 1px solid red;
+    padding: 25px;
+    margin: 35px;
+    /* min-width: 30%; */
+
+ }
+
+
+.registreer{
+    background-color: #FA4E69;
+    border-radius: 10px;
+    margin: 50px;
+    padding: 10px;
+    width: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 300;
+    box-shadow: 3px 3px 5px grey;
+
+}
+
+p a.next{
+    background-color: #FA4E69;
+    border-radius: 10px;
+    margin: 50px;
+    padding: 10px;
+    width: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 300;
+    box-shadow: 3px 3px 5px grey;
+}
+
+p a.begin{
+    background-color: #FA4E69;
+    border-radius: 10px;
+    margin: 1000px 50px;
+    padding: 10px;
+    /* width: 50%; */
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 300;
+    box-shadow: 3px 3px 5px grey;
+    /* display: inline; */
+}
 
 /* iPad///Desktop Body*/
 @media only screen and (min-width: 600px) {
@@ -43,7 +324,7 @@ header nav{
 
 
 
-div{
+/* div{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -88,7 +369,7 @@ div a section img{
 
 
 /* naam op user profile */
-h2{
+/* h2{
     margin-top: 20px;
 }
 
@@ -98,10 +379,10 @@ h2{
     text-align: center; 
     display: block;
     /* margin-left: auto; */
-    margin-right: auto;
+    /* margin-right: auto;
 }
 
 ol{
 background-color: darkorchid;
 margin-top: 20px;
-}
+} */ 
