@@ -91,6 +91,8 @@ form.p2 fieldset label{
     /* border-bottom: 1px solid #FD2755; */
     font-size: 2rem;
     cursor: pointer;
+    font-family:omnes-pro, sans-serif;
+    font-weight: 300;
 }
 
 /* Dit is voor de radiobutton een button-look maken */
@@ -136,7 +138,7 @@ form fieldset input{
 
 form fieldset.p1 .firsttype{
     text-align: left;
-    background: blue;
+    /* background: blue; */
     flex-wrap: wrap;
     justify-content: center;
     margin: 0;
@@ -237,24 +239,28 @@ margin:auto;
 }
 
 ol{
-    max-width: 80%;
+    max-width: 100%;
     display: flex;
     margin: auto;
     background: brown;
-    /* min-width: 100%; */
+    flex-wrap: wrap;
+    min-width: 50%;
+    text-align: center;
 
 }
 
 ol li{
+    min-width: 30%;
+    width: 10px;
+    height: 10px;
     list-style-type: none;
     color:blue;
     flex-wrap: wrap;
     justify-content: space-around;
     flex-direction: row;
     border: 1px solid red;
-    padding: 25px;
-    margin: 35px;
-    /* min-width: 30%; */
+    padding: 48px;
+    margin: 11px;
 
  }
 
