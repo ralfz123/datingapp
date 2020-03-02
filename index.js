@@ -7,11 +7,12 @@ const port = 3000;
 const path = require('path');
 // const views = require ('views');
 
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
 
 // Using static directory:
 app.use('/static', express.static('static'));
+
 
 // Getting home.html file:
 app.get('/home', (req, res) => res.send('De Homepage'));
@@ -24,6 +25,12 @@ app.get('/foto', (req, res) => res.sendFile(path.join(__dirname + '/static/logo-
 
 //Getting an mp3 file
 app.get('/mp3', (req, res) => res.sendFile(path.join(__dirname + '/static/Sabre_Dance_Aram_Khachaturian.mp3')));
+
+//Getting the pages from the application
+app.get('/home', (req, res) => res.sendFile(path.join(__dirname + '/static/Sabre_Dance_Aram_Khachaturian.mp3')));
+
+
+res.render('index')
 
 
 // query parameters exercise = ???
@@ -45,6 +52,8 @@ app.get('/', (req, res) => {
   res.render('index', { title: 'Hey', message: 'Hello there!' })
 })
 
+
+app.get
 
 
 
