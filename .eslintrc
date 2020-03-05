@@ -1,7 +1,9 @@
 {
-    "extends": [
-        "wesbos"
-    ], "rules": {
-        "no-unused-vars": 0
+    "rules": {
+        "semi": ["error", "always"],
+        "quotes": ["error", "double"]
     }
+}
+{
+    "extends": "eslint:recommended"
 }

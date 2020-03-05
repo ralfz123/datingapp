@@ -1,7 +1,6 @@
 //import express packages
 const cc = require ('camelcase');
-const nodemon = require ('nodemon');
-const express = require ('express');
+const express = require('express');
 const app = express();
 const port = 3000;
 const path = require('path');
@@ -43,10 +42,16 @@ app.set('view engine', 'ejs');
 // Using static directory:
 app.use('/static', express.static('static'));
 
-// Render a page
+// // Render a page
+// app.get('/', (req, res) => res.render('head.ejs'));
+
 app.get('/', (req, res) => res.render('object.ejs', {data: movies}));
 
-
+// app.get('/', (req, res) => res.render('index.html'));
+// app.get('/', (req, res) => res.render('registreer_p1.ejs'));
+// app.get('/', (req, res) => res.render('registreer_p2.ejs'));
+// app.get('/', (req, res) => res.render('registreer_p3.ejs'));
+// app.get('/', (req, res) => res.render('registreer_p4.ejs'));
 
 // Getting home.html file:
 app.get('/home', (req, res) => res.send('De Homepage'));

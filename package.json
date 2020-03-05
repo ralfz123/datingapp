@@ -4,6 +4,7 @@
   "description": "dating app",
   "main": "script.js",
   "scripts": {
+    "eslint:fix": "eslint .  --fix",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "echo \"Error: no test specified\" && exit 1",

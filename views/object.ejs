@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+<%- include('head.ejs') %>
+
 <body>
+    <%- include ('header.ejs') %>
+    <%- include ('main.ejs') %>
 
 <h1>Movies</h1>
 <% for (var index = 0; index < data.length; index++) { %>
@@ -14,6 +10,8 @@
         <a href=""> <%= data[index].title %> </a>
     </h2>   
     <p> <%= data[index].plot %> </p>
+    <p> <%= data[index].description %> </p>
 <%} %>
+
 </body>
 </html>
