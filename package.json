@@ -28,10 +28,12 @@
   },
   "homepage": "https://github.com/ralfz123/prototype_datingapp#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "camelcase": "^5.3.1",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
-    "nodemon": "^2.0.2"
+    "multer": "^1.4.2",
+    "slug": "^2.1.1"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",
@@ -45,6 +47,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "^1.7.0",
+    "nodemon": "^2.0.2",
     "prettier": "^1.19.1"
   }
 }

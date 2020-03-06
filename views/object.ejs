@@ -1,8 +1,8 @@
-<%- include('head.ejs') %>
+<%- include('head') %>
 
 <body>
-    <%- include ('header.ejs') %>
-    <%- include ('main.ejs') %>
+    <%- include ('header') %>
+    <%- include ('main') %>
 
 <h1>Movies</h1>
 <% for (var index = 0; index < data.length; index++) { %>
@@ -12,6 +12,8 @@
     <p> <%= data[index].plot %> </p>
     <p> <%= data[index].description %> </p>
 <%} %>
+
+
 
 </body>
 </html>
