@@ -16,8 +16,9 @@ body {
     font-family: omnes-pro, sans-serif;
     font-style: normal;
     font-weight: 100;
-    margin: 5px 10px; 
+    /* margin: 5px 10px;  */
     text-align: center;
+    padding: 10px;
 }
 
 h1 {
@@ -157,6 +158,12 @@ form fieldset.p1 input[type="radio"]{
   width: 0;
 }
 
+.optionphoto input[type="file"]{
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;}
+
 .checkmark{
     position: absolute;
     top: 50;
@@ -241,9 +248,11 @@ h2{
 .optionphoto{
 display: flex;
 max-width: 80%;
-border: 1px solid red;
+border: 1px dotted red;
+border-radius: 10px;
 text-align: center;
 margin:auto;
+
 }
 
 .optionphoto img, .optionphoto p{
@@ -252,9 +261,15 @@ margin:auto;
 }
 
 .optionphoto img{
-    width: 30%;
-    height: 30%;
-    background-color: red;
+    width: 25%;
+    height: 25%;
+}
+
+.optionphoto p{
+    width: 92%;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: auto;
 }
 
 ol{
