@@ -4,12 +4,9 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const path = require('path');
-
-// const data = {
-//    naam : 'Ralf',
-//    leeftijd: '20',
-//    woonplaats : 'Nieuw-Vennep'
-// }
+const slug = require('slug');
+const bodyParser = require ('body-parser');
+const find = require('array-find');
 
 const movies = [ {
     id : 'catch-me-if-you-can',
@@ -33,7 +30,8 @@ const movies = [ {
 }
 ]
 
-
+//
+app.get('/:id', movie)
 
 //Locate ejs (and views)
 app.set('views', path.join(__dirname, 'views'));
@@ -42,16 +40,11 @@ app.set('view engine', 'ejs');
 // Using static directory:
 app.use('/static', express.static('static'));
 
-// // Render a page
-// app.get('/', (req, res) => res.render('head.ejs'));
-
+// Render a page
 app.get('/', (req, res) => res.render('object.ejs', {data: movies}));
 
-// app.get('/', (req, res) => res.render('index.html'));
-// app.get('/', (req, res) => res.render('registreer_p1.ejs'));
-// app.get('/', (req, res) => res.render('registreer_p2.ejs'));
-// app.get('/', (req, res) => res.render('registreer_p3.ejs'));
-// app.get('/', (req, res) => res.render('registreer_p4.ejs'));
+// Render a form
+app.get('/add', form); 
 
 // Getting home.html file:
 app.get('/home', (req, res) => res.send('De Homepage'));
@@ -72,15 +65,46 @@ app.get('/about', (req, res) => res.send('De About-page'));
 app.get('*', (req, res) => res.send('De Error 404 pagina'));
 
 
+app.use(bodyParser.urlencoded({extended: true}));
+app.post('/', add);
 
 
 
+// Function form to render the data from add.ejs
+function form (req, res)  {
+    res.render('add.ejs')};
 
 
+function add(req,res){
+    var id = slug(req.body.title).toLowerCase()
 
-// query parameters exercise = ???
-// app.get('/users/:userId/books/:bookId', (req, res) => res.send(req.params));
+    data.push({
+        id: id,
+        title: req.body.title,
+        plot: req.body.plot,
+        description: req.body.description
+    })
 
+    res.redirect('/' + id)
+}
+
+
+function moviez(req,res){
+    res.render('object.ejs', {data: movies})
+}
+
+function movie(req, res, next){
+    var id = req.params.id
+    var movie = find(data, function (value){
+        return value.id === id;
+    })
+
+    if (!movie){
+        next()
+        return
+    }
+    res.render('detail.ejs', {data: movie})
+}
 
 // Server is listening on port:
 app.listen(port, () => console.log('listening on port ' + port));

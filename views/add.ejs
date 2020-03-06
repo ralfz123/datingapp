@@ -1,14 +1,18 @@
-<form method="POST" action="../index.js">
+<%- include ('head') %>
+<title>Add a movie - My website</title>
+<h1>Add a new movie</h1>
+<form action="../index.js" method="POST" enctype="multipart/form-data">
     <fieldset>
         <legend>Wie ben jij?</legend>
-        <label for="leeftijd">Hoe oud ben je?</label>
-        <input type="number" required>
+        <label for="leeftijd">Title?</label>
+        <input name= title type="text">
 
-        <label for="woonplaats">Waar woon je?</label>
-        <input type="text" placeholder="Plaatsnaam" required>
+        <label for="woonplaats">Plot?</label>
+        <input name= plot  type="text">
 
-        <label for="leeftijd">Wat is je e-mail?</label>
-        <input type="text" placeholder="E-mailadres" required>
+        <label for="leeftijd">Description?</label>
+        <input name= description type="text">
+        <button>Add</button>
     </fieldset>
 </form>
 

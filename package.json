@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/ralfz123/prototype_datingapp#readme",
   "dependencies": {
+    "array-find": "^1.0.0",
     "body-parser": "^1.19.0",
     "camelcase": "^5.3.1",
     "ejs": "^3.0.1",
