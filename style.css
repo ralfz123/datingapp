@@ -19,16 +19,27 @@ body {
     /* margin: 5px 10px;  */
     text-align: center;
     padding: 10px;
+    /* height: 100%; */
 }
+
+main{
+    height: 100%;
+}
+
 
 h1 {
     text-align: center;
     font-weight: 300;
-
 }
+
+h4{
+    margin-bottom: 20px;
+}
+
 .lid{
     max-width: 60%;
     margin: auto;
+    margin-bottom: 330px;
 }
 
 .ondertitel {
@@ -45,7 +56,10 @@ form {
 fieldset {
     border: none;
     display: flex;
+    text-align: center;
 }
+
+
 
 fieldset.p1{
     border: none;
@@ -66,7 +80,7 @@ label:first-child, label:nth-child(2), label:nth-child(3), label:nth-child(4), l
     font-weight: 300;
     margin-top: 10px;
     font-size: 2rem;
-    /* cursor: pointer; */
+    text-align: center;
 }
 
 /* .p1 label:nth-child(3), label:nth-child(4), label:nth-child(5) */
@@ -82,18 +96,21 @@ input[type="radio"].toggle:checked + label {
 
 form.p2 fieldset label{
     max-width: 70%;
-    text-align: left;
+    text-align: center;
     /* background: red; */
     flex-wrap: wrap;
     justify-content: center;
     margin: 50px 0px 10px 0px;
-    /* padding: 5px 50px 10px 5px; */
+    padding: 50px 0px 5px 0px;
     border: 1px solid transparent;
     /* border-bottom: 1px solid #FD2755; */
-    font-size: 2rem;
+    font-size: 1.7rem;
     cursor: pointer;
     font-family:omnes-pro, sans-serif;
-    font-weight: 300;
+    font-weight: 200;
+    margin: 0 auto;
+    /* margin:10px 0px; */
+    
 }
 
 /* Dit is voor de radiobutton een button-look maken */
@@ -142,7 +159,7 @@ form fieldset.p1 .firsttype{
     /* background: blue; */
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0;
+    margin: 0 auto;
     padding: 5px 50px 10px 5px;
     border: 1px solid transparent;
     border-bottom: 1px solid #FD2755;
@@ -158,11 +175,7 @@ form fieldset.p1 input[type="radio"]{
   width: 0;
 }
 
-.optionphoto input[type="file"]{
-    border: 1px solid #ccc;
-    display: inline-block;
-    padding: 6px 12px;
-    cursor: pointer;}
+
 
 .checkmark{
     position: absolute;
@@ -179,7 +192,7 @@ form.p2 fieldset input{
     /* background: blue; */
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0;
+    /* margin: 0; */
     padding: 5px 50px 10px 5px;
     border: 1px solid transparent;
     border-bottom: 1px solid #FD2755;
@@ -241,19 +254,47 @@ h2{
     font-family: 'Kalam';
     font-size: 1.5rem;
     margin-bottom: 15px;
-    margin-top: 26px;
+    margin-top: 50px;
 }
 
 
 .optionphoto{
 display: flex;
-max-width: 80%;
-border: 1px dotted red;
+max-width: 90%;
+border: 1px solid red;
 border-radius: 10px;
 text-align: center;
 margin:auto;
+box-shadow: 3px 3px 10px grey;
 
 }
+
+.optionphoto input[type="file"]{
+    /* border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer; */
+
+    content: 'Select some files';
+    display: inline-block;
+    background: linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 3px solid red ;
+    /* #999; */
+    border-radius: 3px;
+    padding: 5px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+    width: 50%;
+    margin: 30px 0px;
+    padding: 0px;
+    
+}
+
 
 .optionphoto img, .optionphoto p{
     flex-wrap: wrap;
@@ -261,8 +302,8 @@ margin:auto;
 }
 
 .optionphoto img{
-    width: 25%;
-    height: 25%;
+    width: 20%;
+    height: 20%;
 }
 
 .optionphoto p{
@@ -276,7 +317,9 @@ ol{
     max-width: 100%;
     display: flex;
     margin: auto;
-    background: brown;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background: rgba(139, 75, 75, 0.1);
     flex-wrap: wrap;
     min-width: 50%;
     text-align: center;
@@ -284,7 +327,7 @@ ol{
 }
 
 ol li{
-    min-width: 30%;
+    min-width: 25%;
     width: 10px;
     height: 10px;
     list-style-type: none;
@@ -294,7 +337,8 @@ ol li{
     flex-direction: row;
     border: 1px solid red;
     padding: 48px;
-    margin: 11px;
+    margin: 8px;
+    border-radius: 10px;
 
  }
 
@@ -323,7 +367,7 @@ font-size: 1.2rem;
 p a.next{
     background-color: #FA4E69;
     border-radius: 10px;
-    margin: 50px;
+    /* margin: 50px; */
     padding: 10px;
     width: 50%;
     color: white;

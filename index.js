@@ -8,6 +8,7 @@ const slug = require('slug');
 const bodyParser = require ('body-parser');
 const find = require('array-find');
 
+
 const movies = [ {
     id : 'catch-me-if-you-can',
     title : 'Catch me if you can',
@@ -30,15 +31,17 @@ const movies = [ {
 }
 ]
 
-//
-app.get('/:id', movie)
-
 //Locate ejs (and views)
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(bodyParser.urlencoded({extended: true}));
+
 // Using static directory:
 app.use('/static', express.static('static'));
+
+//
+app.get('/:id', movie)
 
 // Render a page
 app.get('/', (req, res) => res.render('object.ejs', {data: movies}));
@@ -65,15 +68,12 @@ app.get('/about', (req, res) => res.send('De About-page'));
 app.get('*', (req, res) => res.send('De Error 404 pagina'));
 
 
-app.use(bodyParser.urlencoded({extended: true}));
 app.post('/', add);
 
 
 
-// Function form to render the data from add.ejs
-function form (req, res)  {
-    res.render('add.ejs')};
 
+// Functions 
 
 function add(req,res){
     var id = slug(req.body.title).toLowerCase()
@@ -86,6 +86,7 @@ function add(req,res){
     })
 
     res.redirect('/' + id)
+    console.log(req.body.title)
 }
 
 
@@ -95,16 +96,21 @@ function moviez(req,res){
 
 function movie(req, res, next){
     var id = req.params.id
-    var movie = find(data, function (value){
+    var moviee = find(data, function (value){
         return value.id === id;
     })
 
-    if (!movie){
+    if (!moviee){
         next()
         return
     }
     res.render('detail.ejs', {data: movie})
 }
+
+// Function form to render the data from add.ejs
+function form (req, res)  {
+    res.render('add.ejs')};
+
 
 // Server is listening on port:
 app.listen(port, () => console.log('listening on port ' + port));
