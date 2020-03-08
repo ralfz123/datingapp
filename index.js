@@ -78,7 +78,7 @@ app.post('/', add);
 function add(req,res){
     var id = slug(req.body.title).toLowerCase()
 
-    data.push({
+    movies.push({
         id: id,
         title: req.body.title,
         plot: req.body.plot,
@@ -90,13 +90,13 @@ function add(req,res){
 }
 
 
-function moviez(req,res){
-    res.render('object.ejs', {data: movies})
-}
+// function moviez(req,res){
+//     res.render('object.ejs', {data: movies})
+// }
 
 function movie(req, res, next){
     var id = req.params.id
-    var moviee = find(data, function (value){
+    var moviee = find(movies, function (value){
         return value.id === id;
     })
 
