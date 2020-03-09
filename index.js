@@ -5,12 +5,13 @@ const app = express();
 const port = 8000;
 const path = require('path');
 const slug = require('slug');
-const bodyParser = require ('body-parser');
+const bodyParser = require('body-parser');
 const find = require('array-find');
-
 const urlencodedParser = bodyParser.urlencoded({
     extended: true
 });
+// const multer= require('multer');
+
 
 const movies = [ {
     id : 'catch-me-if-you-can',
@@ -39,6 +40,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // app.use(bodyParser.urlencoded({extended: true}));
+app.use(urlencodedParser);
 
 
 // Using static directory:
@@ -76,10 +78,10 @@ app.post('/detail', urlencodedParser, add);
 
 
 // Functions 
-
 function add(req,res){
-    console.log(req.body.title)
     // var id = slug(req.body.title).toLowerCase()
+    // var id = 'test';
+    console.log(req.body)
 
 
     movies.push({
