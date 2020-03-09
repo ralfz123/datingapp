@@ -2,12 +2,15 @@
 const cc = require ('camelcase');
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 8000;
 const path = require('path');
 const slug = require('slug');
 const bodyParser = require ('body-parser');
 const find = require('array-find');
 
+const urlencodedParser = bodyParser.urlencoded({
+    extended: true
+});
 
 const movies = [ {
     id : 'catch-me-if-you-can',
@@ -35,12 +38,13 @@ const movies = [ {
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded({extended: true}));
+// app.use(bodyParser.urlencoded({extended: true}));
+
 
 // Using static directory:
 app.use('/static', express.static('static'));
 
-//
+// get the id
 app.get('/:id', movie)
 
 // Render a page
@@ -50,7 +54,7 @@ app.get('/', (req, res) => res.render('object.ejs', {data: movies}));
 app.get('/add', form); 
 
 // Getting home.html file:
-app.get('/home', (req, res) => res.send('De Homepage'));
+// app.get('/home', (req, res) => res.send('De Homepage'));
 
 // Getting contact.html file:
 app.get('/contact', (req, res) => res.sendFile(path.join(__dirname + '/static/contact.html')));
@@ -67,16 +71,16 @@ app.get('/about', (req, res) => res.send('De About-page'));
 // Getting 404.html file:
 app.get('*', (req, res) => res.send('De Error 404 pagina'));
 
-
-app.post('/', add);
-
-
+// Posting an new movie and added to the object.ejs (list)
+app.post('/detail', urlencodedParser, add);
 
 
 // Functions 
 
 function add(req,res){
+    console.log(req.body)
     var id = slug(req.body.title).toLowerCase()
+
 
     movies.push({
         id: id,
@@ -86,7 +90,6 @@ function add(req,res){
     })
 
     res.redirect('/' + id)
-    console.log(req.body.title)
 }
 
 
@@ -96,11 +99,11 @@ function add(req,res){
 
 function movie(req, res, next){
     var id = req.params.id
-    var moviee = find(movies, function (value){
+    var movie = find(movies, function (value){
         return value.id === id;
     })
 
-    if (!moviee){
+    if (!movie){
         next()
         return
     }
