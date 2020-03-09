@@ -78,8 +78,8 @@ app.post('/detail', urlencodedParser, add);
 // Functions 
 
 function add(req,res){
-    console.log(req.body)
-    var id = slug(req.body.title).toLowerCase()
+    console.log(req.body.title)
+    // var id = slug(req.body.title).toLowerCase()
 
 
     movies.push({
