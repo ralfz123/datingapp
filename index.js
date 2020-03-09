@@ -76,8 +76,16 @@ app.get('*', (req, res) => res.send('De Error 404 pagina'));
 // Posting an new movie and added to the object.ejs (list)
 app.post('/detail', urlencodedParser, add);
 
+app.delete('/:id', remove)
+
+// app.update('/detail', edit)
+
+  
+
+
 
 // Functions 
+
 function add(req,res){
     var id = slug(req.body.title).toLowerCase()
     console.log(req.body)
@@ -113,13 +121,31 @@ function movie(req, res, next){
 
 // Function form to render the data from add.ejs
 function form (req, res)  {
-    res.render('add.ejs')};
+ res.render('add.ejs')};
+
+//function to edit data
+// function edit(req,res){
+
+// }
+
+//function to delete data
+function remove(req,res){
+    var id = req.params.id
+
+    data = data.filter(function (value) {
+        return value.id !== id
+    })
+    
+    res.json({status: 'ok'})
+}
+
+
+
+
 
 
 // Server is listening on port:
 app.listen(port, () => console.log('listening on port ' + port));
-
-
 
 
 console.log(cc('LEUKE-OPDRACHT'));

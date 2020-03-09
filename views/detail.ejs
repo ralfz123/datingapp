@@ -4,4 +4,12 @@
 <p> <%=data.description %> </p>
 <p> <a href="/">Back to list </a> </p>
 
-<script src="../index.js"></script>
+<p>
+    <button
+    id="js-remove"
+    data-id="<%= data.id %>"
+    class="danger"
+    >Remove</button>
+</p>
+
+<script src="../static/scripts/script.js"></script>
