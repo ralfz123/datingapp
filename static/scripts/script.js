@@ -1,7 +1,4 @@
-const names = ["ralf", 'guus', 'janno'     ]
-let age=10   ;
-
-var remove = document.getElementById('js-remove')
+    var remove = document.getElementById('js-remove')
 
 if (remove){
     remove.addEventListener('click', onremove)
