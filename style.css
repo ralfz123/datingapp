@@ -278,6 +278,7 @@ form input.firsttype:focus{
         /* border: 1px solid black; */
         border-radius:10px;
         box-shadow:  3px 3px 3px 3px #ccc;
+        /* 0 2px 7px 0 rgba(0,0,0,0.2) */
         background: white;
         font-size: 1rem;
         cursor: pointer;

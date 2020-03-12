@@ -10,7 +10,36 @@ const find = require('array-find');
 const urlencodedParser = bodyParser.urlencoded({
     extended: true
 });
+const mongoose = require ('mongoose');
 // const multer= require('multer');
+const mongo = require ('mongodb');
+
+// Full driver Example to connect to my Node app
+const MongoClient = require('mongodb').MongoClient;
+
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
+
+require('dotenv').config()
+
+const db = null;
+const url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT;
+
+mongo.MongoClient.connect(url, function (err, client){
+    if (err) {
+        throw err
+    }
+
+    db = client.db(process.env.DB_NAME)
+});
+
+
+
 
 
 const movies = [ {
@@ -84,19 +113,32 @@ app.delete('/:id', remove)
 
 // Functions 
 
-function add(req,res){
-    var id = slug(req.body.title).toLowerCase()
-    console.log(req.body)
-
-
-    movies.push({
-        id: id,
+function add(req, res, next){
+    db.collection('movies').insertOne({
         title: req.body.title,
         plot: req.body.plot,
         description: req.body.description
-    })
+    }, done)
 
-    res.redirect('/' + id)
+    function done(err, data){
+        if (err){
+            next (err)
+        } else{
+            res.redirect('/' + data.insertedId)
+        }
+    }
+    // var id = slug(req.body.title).toLowerCase()
+    // console.log(req.body)
+
+
+    // movies.push({
+    //     id: id,
+    //     title: req.body.title,
+    //     plot: req.body.plot,
+    //     description: req.body.description
+    // })
+
+    // res.redirect('/' + id)
 }
 
 
@@ -104,31 +146,56 @@ function add(req,res){
 //     res.render('object.ejs', {data: movies})
 // }
 
+
 function movie(req, res, next){
     var id = req.params.id
-    var movie = find(movies, function (value){
-        return value.id === id;
-    })
+    db.collection('movies').findOne({
+        _id: mongo.ObjectID(id)
+    }, done)
 
-    if (!movie){
-        next()
-        return
+    function done(err, data){
+        if (err){
+            next (err)
+        } else{
+            res.render('detail.ejs', {data: movies})
+        }
     }
-    res.render('detail.ejs', {data: movie})
+
+    // var movie = find(movies, function (value){
+    //     return value.id === id;
+    // })
+
+    // if (!movie){
+    //     next()
+    //     return
+    // }
+    // res.render('detail.ejs', {data: movie})
 }
 
 // Function form to render the data from add.ejs
 function form (req, res)  {
  res.render('add.ejs')};
 
-//function to edit data
+//function to edit data //doet het nog niet!!!!!!!!!!!!!!!!!!
 // function edit(req,res){
 
 // }
 
 //function to delete data
-function remove(req,res){
+function remove(req,res){ //doet het nog niet!!!!!!!!!!!!!!!!!!
     var id = req.params.id
+
+    // db.collection('movies').deleteOne({
+    //     _id: mongo.ObjectID(id)
+    // }, done)
+
+    // function done(err) {
+    //     if (err){
+    //         next(err)
+    //     } else{
+    //         res.json({status: 'ok'})
+    //     }
+    // }
 
     data = data.filter(function (value) {
         return value.id !== id
@@ -137,6 +204,18 @@ function remove(req,res){
     res.json({status: 'ok'})
 }
 
+function moviesFunction(req, res, next){
+    db.collection('movies').find().toArray(done)
+
+    function done(err, data){
+        if (err){
+            next(err)
+        } else{
+            res.render('object.ejs', {data: movies})
+        }
+    }
+
+}
 
 
 
