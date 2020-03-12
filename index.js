@@ -12,42 +12,23 @@ const urlencodedParser = bodyParser.urlencoded({
 });
 const mongoose = require ('mongoose');
 // const multer= require('multer');
-// const mongo = require ('mongodb');
+const mongo = require ('mongodb');
 require('dotenv').config()      
 const {MongoClient} = require('mongodb');
-let db = null
 
-const uri = process.env.DB_NAME
+let db = null;
+const uri = process.env.DB_URI
 
 // Full driver Example to connect to my Node app
 // const MongoClient = require('mongodb').MongoClient;
+mongo.MongoClient.connect(uri, function (err, client) {
+  if (err) {
+    throw err
+  }
 
-async function main(collection, searchValue){
-    
-    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-     // Source: https://www.mongodb.com/blog/post/quick-start-nodejs-mongodb--how-to-get-connected-to-your-database
+  db = client.db(process.env.DB_NAME)
+})
 
-    try {
-        // Connect to the MongoDB cluster
-        await client.connect();
-
-        const db = client.db('database');
-
-        // Make the appropriate DB calls
-        // await  listDatabases(client);
-
-        const informatie = await db.collection(collection).find(searchValue).toArray();
-        console.log(informatie)
-		return informatie
-        
-    } catch (e) {
-        console.error(e);
-    } finally {
-        await client.close();
-    }
-}
-
-main('database')
 
 
 const movies = [ {
@@ -84,13 +65,15 @@ app.use(urlencodedParser);
 app.use('/static', express.static('static'));
 
 // get the id
-app.get('/:id', movie)
+// app.get('/:id', movie)
 
 // Render a page
 app.get('/', (req, res) => res.render('object.ejs', {data: movies}));
 
+app.get('/test', test);
+
 // Render a form
-app.get('/add', form); 
+// app.get('/add', form); 
 
 // Getting home.html file:
 // app.get('/home', (req, res) => res.send('De Homepage'));
@@ -117,6 +100,18 @@ app.delete('/:id', remove)
 
 // app.update('/detail', edit)
 
+function test(req, res) {
+    db.collection('account').find().toArray(done)
+
+    function done(err, data) {
+        if (err) {
+            next(err);
+        } else {
+            console.log(data);
+            res.render('test.ejs', {data: data});
+        }
+    }
+}
   
 
 // Functions 
