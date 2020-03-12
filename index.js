@@ -12,34 +12,42 @@ const urlencodedParser = bodyParser.urlencoded({
 });
 const mongoose = require ('mongoose');
 // const multer= require('multer');
-const mongo = require ('mongodb');
+// const mongo = require ('mongodb');
+require('dotenv').config()      
+const {MongoClient} = require('mongodb');
+let db = null
+
+const uri = process.env.DB_NAME
 
 // Full driver Example to connect to my Node app
-const MongoClient = require('mongodb').MongoClient;
+// const MongoClient = require('mongodb').MongoClient;
 
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
+async function main(collection, searchValue){
+    
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+     // Source: https://www.mongodb.com/blog/post/quick-start-nodejs-mongodb--how-to-get-connected-to-your-database
 
+    try {
+        // Connect to the MongoDB cluster
+        await client.connect();
 
-require('dotenv').config()
+        const db = client.db('database');
 
-const db = null;
-const url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT;
+        // Make the appropriate DB calls
+        // await  listDatabases(client);
 
-mongo.MongoClient.connect(url, function (err, client){
-    if (err) {
-        throw err
+        const informatie = await db.collection(collection).find(searchValue).toArray();
+        console.log(informatie)
+		return informatie
+        
+    } catch (e) {
+        console.error(e);
+    } finally {
+        await client.close();
     }
+}
 
-    db = client.db(process.env.DB_NAME)
-});
-
-
-
+main('database')
 
 
 const movies = [ {
@@ -146,7 +154,6 @@ function add(req, res, next){
 //     res.render('object.ejs', {data: movies})
 // }
 
-
 function movie(req, res, next){
     var id = req.params.id
     db.collection('movies').findOne({
@@ -159,6 +166,7 @@ function movie(req, res, next){
         } else{
             res.render('detail.ejs', {data: movies})
         }
+   
     }
 
     // var movie = find(movies, function (value){
