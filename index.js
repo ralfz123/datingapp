@@ -14,7 +14,7 @@ const mongoose = require ('mongoose');
 // const multer= require('multer');
 const mongo = require ('mongodb');
 require('dotenv').config()      
-const {MongoClient} = require('mongodb');
+// const {MongoClient} = require('mongodb');
 
 let db = null;
 const uri = process.env.DB_URI
