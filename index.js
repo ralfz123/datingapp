@@ -70,10 +70,10 @@ app.use('/static', express.static('static'));
 // Render a page
 app.get('/', (req, res) => res.render('object.ejs', {data: movies}));
 
-app.get('/test', test);
+// app.get('/test', test);
 
 // Render a form
-// app.get('/add', form); 
+app.get('/add', form); 
 
 // Getting home.html file:
 // app.get('/home', (req, res) => res.send('De Homepage'));
@@ -96,9 +96,11 @@ app.get('*', (req, res) => res.send('De Error 404 pagina'));
 // Posting an new movie and added to the object.ejs (list)
 app.post('/detail', urlencodedParser, add);
 
-app.delete('/:id', remove)
+// app.delete('/:id', remove)
 
 // app.update('/detail', edit)
+
+app.get('test.ejs', movie)
 
 function test(req, res) {
     db.collection('account').find().toArray(done)
@@ -128,8 +130,13 @@ function add(req, res, next){
             next (err)
         } else{
             res.redirect('/' + data.insertedId)
+            console.log('gelukt!')
+            console.log(data)
         }
     }
+     
+
+    
     // var id = slug(req.body.title).toLowerCase()
     // console.log(req.body)
 
