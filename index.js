@@ -70,7 +70,7 @@ app.use('/static', express.static('static'));
 // Render a page
 app.get('/', (req, res) => res.render('object.ejs', {data: movies}));
 
-// app.get('/test', test);
+app.get('/test', test);
 
 // Render a form
 app.get('/add', form); 
@@ -131,7 +131,6 @@ function add(req, res, next){
         } else{
             res.redirect('/' + data.insertedId)
             console.log('gelukt!')
-            console.log(data)
         }
     }
      
