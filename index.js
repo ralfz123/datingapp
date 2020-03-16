@@ -19,7 +19,6 @@ require('dotenv').config()
 let db = null;
 const uri = process.env.DB_URI
 
-// Full driver Example to connect to my Node app
 // const MongoClient = require('mongodb').MongoClient;
 mongo.MongoClient.connect(uri, function (err, client) {
   if (err) {
@@ -65,10 +64,10 @@ app.use(urlencodedParser);
 app.use('/static', express.static('static'));
 
 // get the id
-// app.get('/:id', movie)
+app.get('/:id', movie)
 
-// Render a page
-app.get('/', (req, res) => res.render('object.ejs', {data: movies}));
+// Render a page)
+app.get('/', moviesFunction);
 
 app.get('/test', test);
 
@@ -101,6 +100,7 @@ app.post('/detail', urlencodedParser, add);
 // app.update('/detail', edit)
 
 app.get('test.ejs', movie)
+// app.get('/:id', renderData)
 
 function test(req, res) {
     db.collection('account').find().toArray(done)
@@ -114,7 +114,6 @@ function test(req, res) {
         }
     }
 }
-  
 
 // Functions 
 
@@ -123,7 +122,8 @@ function add(req, res, next){
         title: req.body.title,
         plot: req.body.plot,
         description: req.body.description
-    }, done)
+    }, done
+    )
 
     function done(err, data){
         if (err){
@@ -134,8 +134,6 @@ function add(req, res, next){
         }
     }
      
-
-    
     // var id = slug(req.body.title).toLowerCase()
     // console.log(req.body)
 
@@ -150,6 +148,22 @@ function add(req, res, next){
     // res.redirect('/' + id)
 }
 
+// function renderData(req, res) {
+//     let insertedId = req.params.id
+//     db.collection('movies').findOne({
+//         _id: new mongo.ObjectID(id)
+//     }, done)
+
+//     function done(err, data) {
+//         if (err) {
+//             next(err);
+//         } else {
+//             res.render('detail.ejs', {data: data});
+//         }
+//     }
+// }
+
+
 
 // function moviez(req,res){
 //     res.render('object.ejs', {data: movies})
@@ -158,14 +172,15 @@ function add(req, res, next){
 function movie(req, res, next){
     var id = req.params.id
     db.collection('movies').findOne({
-        _id: mongo.ObjectID(id)
+        _id: mongo.ObjectId(id)
     }, done)
 
     function done(err, data){
         if (err){
             next (err)
         } else{
-            res.render('detail.ejs', {data: movies})
+            res.render('detail.ejs', {data: data})
+            console.log('ge-fined')
         }
    
     }
@@ -180,6 +195,9 @@ function movie(req, res, next){
     // }
     // res.render('detail.ejs', {data: movie})
 }
+
+
+
 
 // Function form to render the data from add.ejs
 function form (req, res)  {
@@ -212,6 +230,8 @@ function remove(req,res){ //doet het nog niet!!!!!!!!!!!!!!!!!!
     
     res.json({status: 'ok'})
 }
+
+
 
 function moviesFunction(req, res, next){
     db.collection('movies').find().toArray(done)
