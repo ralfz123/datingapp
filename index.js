@@ -14,13 +14,11 @@ const mongoose = require ('mongoose');
 // const multer= require('multer');
 const mongo = require ('mongodb');
 require('dotenv').config()      
-// const {MongoClient} = require('mongodb');
 const session = require ('express-session');
 
 let db = null;
 const uri = process.env.DB_URI
 
-// const MongoClient = require('mongodb').MongoClient;
 mongo.MongoClient.connect(uri, function (err, client) {
   if (err) {
     throw err
@@ -108,7 +106,7 @@ app.post('/detail', urlencodedParser, add);
 // app.update('/detail', edit)
 
 app.get('test.ejs', movie)
-app.get('/:id', renderData)
+// app.get('/:id', renderData)
 
 function test(req, res) {
     db.collection('account').find().toArray(done)
@@ -156,18 +154,7 @@ function add(req, res, next){
         }
     }
      
-    // var id = slug(req.body.title).toLowerCase()
-    // console.log(req.body)
 
-
-    // movies.push({
-    //     id: id,
-    //     title: req.body.title,
-    //     plot: req.body.plot,
-    //     description: req.body.description
-    // })
-
-    // res.redirect('/' + id)
 }
 
 function renderData(req, res) {
@@ -206,16 +193,6 @@ function movie(req, res, next){
         }
    
     }
-
-    // var movie = find(movies, function (value){
-    //     return value.id === id;
-    // })
-
-    // if (!movie){
-    //     next()
-    //     return
-    // }
-    // res.render('detail.ejs', {data: movie})
 }
 
 
