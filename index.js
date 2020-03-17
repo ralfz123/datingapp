@@ -39,13 +39,43 @@ app.set('view engine', 'ejs');
 
 // routing 
 app.get('/', function(req, res) {res.render('index.ejs')});
-
 app.get('/registreer_p1', function(req, res) {res.render('registreer_p1.ejs')});
 app.get('/registreer_p2', function(req, res) {res.render('registreer_p2.ejs')});
 app.get('/registreer_p3', function(req, res) {res.render('registreer_p3.ejs')});
 app.get('/registreer_p4', function(req, res) {res.render('registreer_p4.ejs')});
-
 // app.post('/', aanmeld);
+app.get('/test', gettingData);
+
+
+// getting data from database
+function gettingData(req, res, next){
+    db.collection('users').find().toArray(done)
+        
+    function done (err, data){
+        if (err){
+            next(err)
+        } else{
+            console.log(data);
+            res.render('test.ejs', {data: data})
+        }
+    }
+}
+
+
+// function addInlog(req, res, next){
+//     db.collection('users').insertOne({
+//         username: req.body.username,
+//         password: req.body.password
+//     }, done)
+
+//     function done (err, data){
+//         if (err){
+//             next(err)
+//         } else{
+//             res.render('/', {users: data})
+//         }
+//     }
+// }
 
 
 
@@ -74,7 +104,7 @@ app.get('/registreer_p4', function(req, res) {res.render('registreer_p4.ejs')});
 // }
 
 
-
+// --------------------------------------------------------------------------------------------------------------------------
 
 
 app.use(urlencodedParser);
