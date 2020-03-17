@@ -15,14 +15,14 @@
 
     <main>
     <!-- inloggen met inloggegevens -->
-    <form class="inlog" action="" method="POST">
+    <form class="inlog" action="/" method="POST">
         <fieldset>
             <legend>Inloggen</legend>
             <label for="gebruikersnaam">Gebruikersnaam</label>
-            <input type="text" required>
+            <input type="text" name="username" required>
 
             <label for="wachtwoord">Wachtwoord</label>
-            <input type="password" required>
+            <input type="password" name="password" required>
 
             <button type="submit">Login</button>
         </fieldset>
@@ -32,8 +32,7 @@
     <div class="line"></div>
 
     <h2>Nog geen account?</h2>
-    <!-- Mag dit? OF button met js doorlinken nr next page? -->
-    <p><a class="registreer" href="registreer_p1.html" >Registreer</a></p>
+    <p><a class="registreer" href="/views/registreer_p1" >Registreer</a></p>
 </main>
 
 </div>

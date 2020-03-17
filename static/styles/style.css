@@ -18,7 +18,7 @@ body {
     font-weight: 100;
     text-align: center;
     padding: 10px;
-    background-image: url("../prototype_datingapp/img/backgroundmobile3.jpg");
+    background-image: url("../img/backgroundmobile3.jpg");
     background-repeat: no-repeat;
 
 }
@@ -26,7 +26,7 @@ body {
 /* iPad Body */
 @media only screen and (min-width: 400px) {
     body {
-        background-image: url("../prototype_datingapp/img/background2.jpg");
+        background-image: url("../img/background2.jpg");
         background-size: 110%;
         background-repeat: no-repeat;
         /* background-color: red; */
@@ -38,7 +38,7 @@ body {
 /* Desktop Body */
 @media only screen and (min-width: 600px) {
     body {
-        background-image: url("../prototype_datingapp/img/background2.jpg");
+        background-image: url("../img/background2.jpg");
         background-size: 110%;
         background-repeat: no-repeat;
         /* background-color: red; */

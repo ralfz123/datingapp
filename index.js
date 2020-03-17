@@ -28,28 +28,7 @@ mongo.MongoClient.connect(uri, function (err, client) {
 })
 
 
-
-// const movies = [ {
-//     id : 'catch-me-if-you-can',
-//     title : 'Catch me if you can',
-//     plot: 'A seasoned FBI agent pursues Frank Abagnale Jr. who, before his 19th birthday, successfully forged millions of dollars worth of checks while posing as a Pan Am pilot, a doctor, and a legal prosecutor. New Rochelle, the 1960s.' ,
-//     description : 'before his 19th birthday.',
-// },
-
-// {
-//     id : 'knives-out',
-//     title : 'Knives out',
-//     plot : 'A detective investigates the death of a patriarch of an eccentric, combative family.',
-//     description : 'Writer Harlan Thrombey is found dead in his house, just after his 85th birthday. Detective Benoit Blanc is called in to solve the mystery, which is quite a challenge. Harlan has rather strange and suspicious family members and also a number of staff members who served him when he was alive.',
-// },
-
-// {
-//     id : 'batman',
-//     title : 'batman',
-//     plot : 'A detective investigates the death of a patriarch of an eccentric, combative family.',
-//     description : 'Writer Harlan Thrombey is found dead in his house, just after his 85th birthday. Detective Benoit Blanc is called in to solve the mystery, which is quite a challenge. Harlan has rather strange and suspicious family members and also a number of staff members who served him when he was alive.',
-// }
-// ]
+const users = [];
 
 // Using static files from static directory:
 app.use('/static', express.static('static'));
@@ -59,36 +38,62 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // routing 
+app.get('/', function(req, res) {res.render('index.ejs')});
+app.get('/registreer', function(req, res) {res.render('registreer_p1.ejs')});
+// app.post('/registreer_p1.ejs', aanmeld);
+
+
+
+// function addInput(req, res){
+//     username: req.body.username,
+//     password: req.body.password
+// }
+
+// function aanmeld(req, res, next){
+//     db.collection('users').insertOne({
+//         name: req.body.name,
+//         password: req.body.password,
+//     }, done
+//     )
+
+//     function done(err, data){
+//         if (err){
+//             next (err)
+//         } else{
+//             res.redirect('/' + data.insertedId)
+//             console.log('gelukt!')
+//         }
+//     }
+     
+
+// }
 
 
 
 
 
-
-
-// app.use(bodyParser.urlencoded({extended: true}));
 app.use(urlencodedParser);
 
-app.use(session({
-    resave: false,
-    saveUninitialized: true,
-    secret: process.env.SESSION_SECRET
-}))
+// app.use(session({
+//     resave: false,
+//     saveUninitialized: true,
+//     secret: process.env.SESSION_SECRET
+// }))
 
-app.get('/log-out', logout);
+// app.get('/log-out', logout);
 
 
 
 // get the id
-app.get('/:id', movie)
+// app.get('/:id', movie)
 
 // Render a page)
-app.get('/', moviesFunction);
+// app.get('/', moviesFunction);
 
-app.get('/test', test);
+// app.get('/test', test);
 
 // Render a form
-app.get('/add', form); 
+// app.get('/add', form); 
 
 // Getting home.html file:
 // app.get('/home', (req, res) => res.send('De Homepage'));
@@ -100,13 +105,13 @@ app.get('/about', (req, res) => res.send('De About-page'));
 app.get('*', (req, res) => res.send('De Error 404 pagina'));
 
 // Posting an new movie and added to the object.ejs (list)
-app.post('/detail', urlencodedParser, add);
+// app.post('/detail', urlencodedParser, add);
 
 // app.delete('/:id', remove)
 
 // app.update('/detail', edit)
 
-app.get('test.ejs', movie)
+// app.get('test.ejs', movie)
 // app.get('/:id', renderData)
 
 function test(req, res) {
