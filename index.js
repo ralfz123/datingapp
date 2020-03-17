@@ -43,7 +43,7 @@ app.get('/registreer_p1', function(req, res) {res.render('registreer_p1.ejs')});
 app.get('/registreer_p2', function(req, res) {res.render('registreer_p2.ejs')});
 app.get('/registreer_p3', function(req, res) {res.render('registreer_p3.ejs')});
 app.get('/registreer_p4', function(req, res) {res.render('registreer_p4.ejs')});
-// app.post('/', aanmeld);
+// app.post('/test.ejs', addInlog);
 app.get('/test', gettingData);
 
 
@@ -56,7 +56,7 @@ function gettingData(req, res, next){
             next(err)
         } else{
             console.log(data);
-            res.render('test.ejs', {data: data})
+            res.render('test.ejs', {users: data})
         }
     }
 }
@@ -70,9 +70,11 @@ function gettingData(req, res, next){
 
 //     function done (err, data){
 //         if (err){
+//             console.log('You have got an error!')
 //             next(err)
 //         } else{
-//             res.render('/', {users: data})
+//             console.log('Succeeded')
+//             res.render('/', {data: data})
 //         }
 //     }
 // }
