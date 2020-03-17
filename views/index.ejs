@@ -1,27 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login page</title>
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="https://use.typekit.net/gpp7dbn.css">
-    <link href="https://fonts.googleapis.com/css?family=Kalam&display=swap:300,400,700" rel="stylesheet">
-</head>
+    <head>
+        <%- include ('head') %>
+        <title>Home</title>
+    </head>
 
 <body>
-
     <div class="wrapper">
 
-    <!-- header -->
-    <h1>Hey!</h1>
-    <!-- logo -->
-    <img src="" alt="">
+    <header>
+        <h1>Hey!</h1>
+    </header>     
 
-    <!-- main -->
-
+    <main>
     <!-- inloggen met inloggegevens -->
     <form class="inlog" action="" method="POST">
         <fieldset>
@@ -42,11 +34,11 @@
     <h2>Nog geen account?</h2>
     <!-- Mag dit? OF button met js doorlinken nr next page? -->
     <p><a class="registreer" href="registreer_p1.html" >Registreer</a></p>
-
+</main>
 
 </div>
 
-    <!-- footer -->
+<% include('tail') %>
 
 </body>
 
