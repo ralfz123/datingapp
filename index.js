@@ -13,8 +13,11 @@ const urlencodedParser = bodyParser.urlencoded({
 const mongoose = require ('mongoose');
 // const multer= require('multer');
 const mongo = require ('mongodb');
-require('dotenv').config()      
 const session = require ('express-session');
+let usersMultiple;
+
+// Database MongoDB
+require('dotenv').config()      
 
 let db = null;
 const uri = process.env.DB_URI
@@ -25,11 +28,14 @@ mongo.MongoClient.connect(uri, function (err, client) {
   }
 
   db = client.db(process.env.DB_NAME)
-})
+  usersMultiple = db.collection(process.env.DB_NAME);
+  usersMultiple.createIndex({ username: 1 }, {unique: true});
+});
 
 
-const users = [];
+// const users = [];
 
+// Middelware set-up:
 // Using static files from static directory:
 app.use('/static', express.static('static'));
 
@@ -45,7 +51,7 @@ app.get('/registreer_p3', function(req, res) {res.render('registreer_p3.ejs')});
 app.get('/registreer_p4', function(req, res) {res.render('registreer_p4.ejs')});
 // app.post('/test.ejs', addInlog);
 app.get('/test', gettingData);
-
+app.post('/', login)
 
 // getting data from database
 function gettingData(req, res, next){
@@ -62,22 +68,46 @@ function gettingData(req, res, next){
 }
 
 
-// function addInlog(req, res, next){
-//     db.collection('users').insertOne({
-//         username: req.body.username,
-//         password: req.body.password
-//     }, done)
+function addInlog(req, res, next){
+    db.collection('users').insertOne({
+        username: req.body.username,
+        password: req.body.password
+    }, done)
 
-//     function done (err, data){
-//         if (err){
-//             console.log('You have got an error!')
-//             next(err)
-//         } else{
-//             console.log('Succeeded')
-//             res.render('/', {data: data})
-//         }
-//     }
-// }
+    function done (err, data){
+        if (err){
+            console.log('You have got an error!')
+            next(err)
+        } else{
+            console.log('Succeeded')
+            res.render('/', {data: data})
+        }
+    }
+}
+
+// check if there is an user and also logs in
+function login (req, res){
+
+
+    usersMultiple.find({}, { projection: { _id: 0, wachtwoord: 0 } }).toArray(function(err, collection) {
+        if (err) throw err;
+        const gebruiker = collection.find(collection => collection.username === req.body.username && collection.password === req.body.password);
+        if (gebruiker === undefined) {
+            console.log('Account not found :(');
+        } else {
+            console.log(gebruiker);
+            console.log('Account found :) !');
+            console.log(id)
+            res.render('succes.ejs');
+        }
+    });
+}
+
+
+// wachtwoord vergeten--> nieuwe instellen
+// db.collection('users').updateOne({ id: 1 } { $Set { password: req.body.password } })
+
+
 
 
 
