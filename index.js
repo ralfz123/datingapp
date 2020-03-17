@@ -107,7 +107,7 @@ app.post('/detail', urlencodedParser, add);
 // app.update('/detail', edit)
 
 app.get('test.ejs', movie)
-// app.get('/:id', renderData)
+app.get('/:id', renderData)
 
 function test(req, res) {
     db.collection('account').find().toArray(done)
@@ -155,20 +155,20 @@ function add(req, res, next){
     // res.redirect('/' + id)
 }
 
-// function renderData(req, res) {
-//     let insertedId = req.params.id
-//     db.collection('movies').findOne({
-//         _id: new mongo.ObjectID(id)
-//     }, done)
+function renderData(req, res) {
+    let insertedId = req.params.id
+    db.collection('movies').findOne({
+        _id: new mongo.ObjectID(id)
+    }, done)
 
-//     function done(err, data) {
-//         if (err) {
-//             next(err);
-//         } else {
-//             res.render('detail.ejs', {data: data});
-//         }
-//     }
-// }
+    function done(err, data) {
+        if (err) {
+            next(err);
+        } else {
+            res.render('detail.ejs', {data: data});
+        }
+    }
+}
 
 
 
