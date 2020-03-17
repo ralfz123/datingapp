@@ -15,6 +15,7 @@ const mongoose = require ('mongoose');
 const mongo = require ('mongodb');
 require('dotenv').config()      
 // const {MongoClient} = require('mongodb');
+const session = require ('express-session');
 
 let db = null;
 const uri = process.env.DB_URI
@@ -58,6 +59,12 @@ app.set('view engine', 'ejs');
 
 // app.use(bodyParser.urlencoded({extended: true}));
 app.use(urlencodedParser);
+
+app.use(session({
+    resave: false,
+    saveUninitialized: true,
+    secret: process.env.SESSION_SECRET
+}))
 
 
 // Using static directory:
@@ -172,7 +179,7 @@ function add(req, res, next){
 function movie(req, res, next){
     var id = req.params.id
     db.collection('movies').findOne({
-        _id: mongo.ObjectId(id)
+        _id: mongo.ObjectId
     }, done)
 
     function done(err, data){
