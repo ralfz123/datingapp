@@ -43,6 +43,9 @@ app.use('/static', express.static('static'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(urlencodedParser);
+
+
 // routing 
 app.get('/', function(req, res) {res.render('index.ejs')});
 app.get('/registreer_p1', function(req, res) {res.render('registreer_p1.ejs')});
@@ -51,7 +54,12 @@ app.get('/registreer_p3', function(req, res) {res.render('registreer_p3.ejs')});
 app.get('/registreer_p4', function(req, res) {res.render('registreer_p4.ejs')});
 // app.post('/test.ejs', addInlog);
 app.get('/test', gettingData);
-app.post('/', login)
+app.post('/', login);
+app.post('/registrate', makeUser);
+
+
+app.get('*', function(req, res) {res.send('Error 404 ')});
+
 
 // getting data from database
 function gettingData(req, res, next){
@@ -68,28 +76,26 @@ function gettingData(req, res, next){
 }
 
 
-function addInlog(req, res, next){
-    db.collection('users').insertOne({
-        username: req.body.username,
-        password: req.body.password
-    }, done)
+// function addInlog(req, res, next){
+//     db.collection('users').insertOne({
+//         username: req.body.username,
+//         password: req.body.password
+//     }, done)
 
-    function done (err, data){
-        if (err){
-            console.log('You have got an error!')
-            next(err)
-        } else{
-            console.log('Succeeded')
-            res.render('/', {data: data})
-        }
-    }
-}
+//     function done (err, data){
+//         if (err){
+//             console.log('You have got an error!')
+//             next(err)
+//         } else{
+//             console.log('Succeeded')
+//             res.render('/', {data: data})
+//         }
+//     }
+// }
 
 // check if there is an user and also logs in
 function login (req, res){
-
-
-    usersMultiple.find({}, { projection: { _id: 0, wachtwoord: 0 } }).toArray(function(err, collection) {
+    usersMultiple.find({}, { projection: { _id: 0, password: 0 } }).toArray(function(err, collection) {
         if (err) throw err;
         const gebruiker = collection.find(collection => collection.username === req.body.username && collection.password === req.body.password);
         if (gebruiker === undefined) {
@@ -102,6 +108,39 @@ function login (req, res){
         }
     });
 }
+
+
+function makeUser(req,res){
+    let firstName = req.body.firstName;
+    let gender = req.body.gender;
+    let searchSex = req.body.searchSex;
+    // let age = req.body.age;
+    // let hometown = req.body.hometown;
+    // let email = req.body.email;
+    // let photos = req.body.photos;
+
+    let data = {
+        'firstName' : firstName,
+        'gender' : gender,
+        'searchSex' : searchSex,
+        // 'age' : age,
+        // 'hometown' : hometown,
+        // 'email' : email,
+        // 'photos' : photos
+    };
+
+    db.collection('users').insertOne(data, function(err, collection){
+        if (err){
+            throw err;
+        } else {
+            console.log('User added');
+            console.log(data)
+            res.render('succes.ejs');
+        }
+    })
+}
+
+
 
 
 // wachtwoord vergeten--> nieuwe instellen
@@ -135,11 +174,14 @@ function login (req, res){
 
 // }
 
+// Server is listening on port:
+app.listen(port, () => console.log('listening on port ' + port));
+
+console.log(cc('LEUKE-OPDRACHT'));
 
 // --------------------------------------------------------------------------------------------------------------------------
 
 
-app.use(urlencodedParser);
 
 // app.use(session({
 //     resave: false,
@@ -317,14 +359,3 @@ function moviesFunction(req, res, next){
     }
 
 }
-
-
-
-
-
-// Server is listening on port:
-app.listen(port, () => console.log('listening on port ' + port));
-
-
-console.log(cc('LEUKE-OPDRACHT'));
-// console.log('The route parameters are ' );
