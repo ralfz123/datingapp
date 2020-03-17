@@ -66,6 +66,7 @@ app.use(session({
     secret: process.env.SESSION_SECRET
 }))
 
+app.get('/log-out', logout);
 
 // Using static directory:
 app.use('/static', express.static('static'));
@@ -123,6 +124,20 @@ function test(req, res) {
 }
 
 // Functions 
+
+function logout(req, res, next){
+    req.session.destroy(function (err){
+        if (err){
+            next (err)
+        } else{
+            res.redirect('/')
+        }
+    })
+}
+
+
+
+
 
 function add(req, res, next){
     db.collection('movies').insertOne({
