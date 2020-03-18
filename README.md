@@ -25,12 +25,11 @@ In **Find Your Match** you can login into your account and you can register an a
 ```$ npm install```
 
 # :computer: Usage
-1.   Run Find Your Match:  
-```$ npm run start```  
-
+1.   
+- Run Find Your Match:  
+```$ npm run start```   
     or  
-
-    Run developer mode:  
+- Run developer mode:  
 ```$ npm run startdev```
 
 2. To use the app, go to ```localhost:8000``` in your browser.   
