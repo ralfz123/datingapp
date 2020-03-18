@@ -24,17 +24,17 @@ Clone the repository:
 Install dependencies   
 ```$ npm install```
 
-# :computer Usage
+# :computer: Usage
 Run Find Your Match:  
 ```$ npm run start```
 
 Run developer mode:  
 ```$ npm run startdev```
 
-To use the app, go to ```localhost:8000``` in your browser. That's it!:white_check_mark: 
+To use the app, go to ```localhost:8000``` in your browser. That's it! :white_check_mark:   
 (:heavy_exclamation_mark: Ask me the link to connect to my database :heavy_exclamation_mark:) 
 
-# Database structure
+# :chart_with_upwards_trend: Database structure
 ...
 
 
