@@ -28,16 +28,16 @@ In **Find Your Match** you can login into your account and you can register an a
 1.   Run Find Your Match:  
 ```$ npm run start```  
 
-or  
+    or  
 
-Run developer mode:  
+    Run developer mode:  
 ```$ npm run startdev```
 
 2. To use the app, go to ```localhost:8000``` in your browser.   
 (:heavy_exclamation_mark: Ask me the link to connect to my database :heavy_exclamation_mark:) 
 
 3. Use the Inspector by pressing Cmd + Option + I (Mac) or F12 (Windows). Then click on the button to change your screen to mobile (iPhone 6/7/8). The app currently works only on Mobile Device. That's it! :white_check_mark:   
-<img src="https://github.com/ralfz123/prototype_datingapp/blob/master/docs/readme/mobileinspect.png?raw=true" width="500" />
+<img src="https://github.com/ralfz123/prototype_datingapp/blob/master/docs/readme/mobileinspect.png?raw=true" width="900" />
 
 # :chart_with_upwards_trend: Database structure
 <img src="https://github.com/ralfz123/prototype_datingapp/blob/master/docs/readme/db.png?raw=true" width="500" />
