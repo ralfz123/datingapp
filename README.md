@@ -25,8 +25,7 @@ In **Find Your Match** you can login into your account and you can register an a
 ```$ npm install```
 
 # :computer: Usage
-1.   
-Run Find Your Match:  
+1.   Run Find Your Match:  
 ```$ npm run start```  
 
 or  
@@ -34,16 +33,18 @@ or
 Run developer mode:  
 ```$ npm run startdev```
 
-2. To use the app, go to ```localhost:8000``` in your browser. That's it! :white_check_mark:   
+2. To use the app, go to ```localhost:8000``` in your browser.   
 (:heavy_exclamation_mark: Ask me the link to connect to my database :heavy_exclamation_mark:) 
 
-3. Use the Inspector by pressing Cmd + Option + I (Mac) or F12 (Windows). Then click on the button to change your screen to mobile (iPhone 6/7/8). The app currently works only on Mobile Device. 
+3. Use the Inspector by pressing Cmd + Option + I (Mac) or F12 (Windows). Then click on the button to change your screen to mobile (iPhone 6/7/8). The app currently works only on Mobile Device. That's it! :white_check_mark:   
+<img src="https://github.com/ralfz123/prototype_datingapp/blob/master/docs/readme/mobileinspect.png?raw=true" width="500" />
 
 # :chart_with_upwards_trend: Database structure
-...
+<img src="https://github.com/ralfz123/prototype_datingapp/blob/master/docs/readme/db.png?raw=true" width="500" />
+<img src="https://github.com/ralfz123/prototype_datingapp/blob/master/docs/readme/objectdb.png?raw=true" width="500" />
 
 # :cop: License
-MIT ()
+[MIT] (https://github.com/ralfz123/prototype_datingapp/blob/master/LICENSE.md)
 
 # :file_folder: Links resources
 ...
