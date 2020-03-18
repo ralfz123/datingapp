@@ -21,7 +21,7 @@
         <fieldset class="p1">
             <legend>Wie ben jij?</legend>
             <label for="firstName">Ik ben</label>
-            <input class="firsttype" type="text" placeholder="Voornaam" required>
+            <input class="firsttype" type="text" name="firstName" placeholder="Voornaam" required>
 
             
             <label for="gender">en ben een</label>
@@ -57,6 +57,19 @@
             <input type="radio" name="searchSex" value="beide" required>
             <label for="beide">Beide</label>
             <span class="checkmark"></span>
+
+            <legend>Wie ben jij?</legend>
+            <label for="age">Hoe oud ben je?</label>
+            <input type="number" name="age" placeholder="Leeftijd" required>
+
+            <label for="hometown">Waar woon je?</label>
+            <input type="text" name="hometown" placeholder="Plaatsnaam" required>
+
+            <label for="email">Wat is je e-mail?</label>
+            <input type="text" name="email" placeholder="E-mailadres" required>
+
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password" required>
 
             <button type="submit"> Add</button>
             

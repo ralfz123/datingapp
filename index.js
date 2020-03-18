@@ -55,7 +55,7 @@ app.get('/registreer_p4', function(req, res) {res.render('registreer_p4.ejs')});
 // app.post('/test.ejs', addInlog);
 app.get('/test', gettingData);
 app.post('/', login);
-app.post('/registrate', makeUser);
+app.post('/registrate',urlencodedParser, makeUser);
 
 
 app.get('*', function(req, res) {res.send('Error 404 ')});
@@ -114,18 +114,20 @@ function makeUser(req,res){
     let firstName = req.body.firstName;
     let gender = req.body.gender;
     let searchSex = req.body.searchSex;
-    // let age = req.body.age;
-    // let hometown = req.body.hometown;
-    // let email = req.body.email;
+    let age = req.body.age;
+    let hometown = req.body.hometown;
+    let email = req.body.email;
+    let password = req.body.password;
     // let photos = req.body.photos;
 
     let data = {
         'firstName' : firstName,
         'gender' : gender,
         'searchSex' : searchSex,
-        // 'age' : age,
-        // 'hometown' : hometown,
-        // 'email' : email,
+        'age' : age,
+        'hometown' : hometown,
+        'email' : email,
+        'password' : password
         // 'photos' : photos
     };
 
@@ -209,9 +211,6 @@ console.log(cc('LEUKE-OPDRACHT'));
 
 // Getting about.html file:
 app.get('/about', (req, res) => res.send('De About-page'));
-
-// Getting 404.html file:
-app.get('*', (req, res) => res.send('De Error 404 pagina'));
 
 // Posting an new movie and added to the object.ejs (list)
 // app.post('/detail', urlencodedParser, add);

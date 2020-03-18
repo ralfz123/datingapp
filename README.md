@@ -7,10 +7,10 @@ _I would like to create a personal account,
 _so that others can find me .___
 
 # :heart_eyes: Feature
-In Find Your Match you can login into your account and you can register an account. On that way you can access the app.
+In **Find Your Match** you can login into your account and you can register an account. On that way you can access the app.
 
 # :nerd_face: Technical summary
-Find Your Match is built, using:
+**Find Your Match**  is built, using:
 - Express
 - Node.JS
 - MongoDB
