@@ -556,12 +556,19 @@ font-size: 1.2rem;
     box-shadow: 3px 3px 5px grey;
 
 }
-p{
+/* p{
+    margin: 0;
+    padding: 0;
+    display: inline;
+} */
+
+.buttons{
     margin: 0;
     padding: 0;
     display: inline;
 }
-p a.back, p a.next{
+
+a.back, a.next{
     background-color: #FA4E69;
     border-radius: 10px;
     margin: 0;
@@ -575,16 +582,16 @@ p a.back, p a.next{
     margin: 25px 50px 6px 50px;
 }
 
-p a.next, p a.back{
+a.next, a.back{
 display: inline-block;
 }
 
-p a.back{
+a.back{
     background-color: rgb(250, 116, 136);
 
 }
 
-p a.begin{
+a.begin{
     background-color: #FA4E69;
     border-radius: 10px;
     margin: 1000px 50px;
