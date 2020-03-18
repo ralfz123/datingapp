@@ -18,28 +18,32 @@ In **Find Your Match** you can login into your account and you can register an a
 - NPM
 
 # :gear: Install
-Clone the repository:  
+1. Clone the repository:  
 ```$ git clone https://github.com/ralfz123/prototype_datingapp.git```
 
-Install dependencies   
+2. Install dependencies   
 ```$ npm install```
 
 # :computer: Usage
+1.   
 Run Find Your Match:  
-```$ npm run start```
+```$ npm run start```  
+
+or  
 
 Run developer mode:  
 ```$ npm run startdev```
 
-To use the app, go to ```localhost:8000``` in your browser. That's it! :white_check_mark:   
+2. To use the app, go to ```localhost:8000``` in your browser. That's it! :white_check_mark:   
 (:heavy_exclamation_mark: Ask me the link to connect to my database :heavy_exclamation_mark:) 
+
+3. Use the Inspector by pressing Cmd + Option + I (Mac) or F12 (Windows). Then click on the button to change your screen to mobile (iPhone 6/7/8). The app currently works only on Mobile Device. 
 
 # :chart_with_upwards_trend: Database structure
 ...
 
-
 # :cop: License
-...
+MIT ()
 
 # :file_folder: Links resources
 ...

@@ -53,8 +53,8 @@ app.get('/registreer_p2', function(req, res) {res.render('registreer_p2.ejs')});
 app.get('/registreer_p3', function(req, res) {res.render('registreer_p3.ejs')});
 app.get('/registreer_p4', function(req, res) {res.render('registreer_p4.ejs')});
 // app.post('/test.ejs', addInlog);
-app.get('/test', gettingData);
-app.post('/', login);
+// app.get('/test', gettingData);
+app.post('', login);
 app.post('/registrate',urlencodedParser, makeUser);
 
 
@@ -94,22 +94,36 @@ function gettingData(req, res, next){
 // }
 
 // check if there is an user and also logs in
-function login (req, res){
-    usersMultiple.find({}, { projection: { _id: 0, password: 0 } }).toArray(function(err, collection) {
-        if (err) throw err;
-        const gebruiker = collection.find(collection => collection.username === req.body.username && collection.password === req.body.password);
-        if (gebruiker === undefined) {
-            console.log('Account not found :(');
-        } else {
-            console.log(gebruiker);
-            console.log('Account found :) !');
-            console.log(id)
-            res.render('succes.ejs');
+// function login (req, res){
+//     usersMultiple.find({}, { projection: { _id: 0, password: 0 } }).toArray(function(err, collection) {
+//         if (err) throw err;
+//         const gebruiker = collection.find(collection => collection.username === req.body.username && collection.password === req.body.password);
+//         if (gebruiker === undefined) {
+//             console.log('Account not found :(');
+//         } else {
+//             console.log(gebruiker);
+//             console.log('Account found :) !');
+//             console.log(id)
+//             res.render('succes.ejs');
+//         }
+//     });
+// }
+
+function login (req){
+    db.collection('users').findOne({
+        firstName: req.body.firstName
+    }).then(data=>console.log(data)), done;
+
+    function done(req,res){
+        if ({firstName: password}){
+            res.render('/succes.ejs')
         }
-    });
+    }
 }
 
 
+
+//r register and the app makes an user in de DB
 function makeUser(req,res){
     let firstName = req.body.firstName;
     let gender = req.body.gender;
