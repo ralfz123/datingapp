@@ -65,6 +65,9 @@ h4{
     max-width: 60%;
     margin: auto;
     margin-bottom: 30px;
+    font-size: 1.5rem;
+    font-family: omnes-pro, sans-serif;
+    font-weight: 500;
 }
 
 .ondertitel {
@@ -320,6 +323,9 @@ form fieldset.p1 input[type="radio"]{
   background-color: red;
   margin-left: 50px;
 }
+form fieldset.p1 input[type="radio"]:focus{
+   box-shadow: none;
+  }
 
 /* //absolute moet weg */
 
@@ -357,6 +363,7 @@ form.p2 fieldset input:focus{
     border: 1px solid #FD2755;
     outline: none;
     transition: ease-in-out 0.3s;
+    box-shadow: 3px 3px 5px grey;
 }
 
 form.p2 fieldset input::placeholder{
@@ -368,6 +375,8 @@ form input:focus{
     border: 1px solid #FD2755;
     outline: none;
     transition: ease-in-out 0.3s;
+    box-shadow: 3px 3px 5px grey;
+
 }
 
 form input.firsttype:focus{

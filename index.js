@@ -54,7 +54,7 @@ app.get('/registreer_p3', function(req, res) {res.render('registreer_p3.ejs')});
 app.get('/registreer_p4', function(req, res) {res.render('registreer_p4.ejs')});
 // app.post('/test.ejs', addInlog);
 // app.get('/test', gettingData);
-app.post('', login);
+app.post('/', login);
 app.post('/registrate',urlencodedParser, makeUser);
 
 
@@ -116,7 +116,7 @@ function login (req){
 
     function done(req,res){
         if ({firstName: password}){
-            res.render('/succes.ejs')
+            res.redirect('/succes.ejs')
         }
     }
 }

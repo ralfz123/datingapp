@@ -1,5 +1,5 @@
 # Find Your Match!
-<img src="https://github.com/ralfz123/prototype_datingapp/blob/master/docs/screens/scherm1_v1.png?raw=true" width="350" />
+<img src="https://github.com/ralfz123/prototype_datingapp/blob/master/docs/readme/design_mockup2.png.jpg?raw=true" width="1000" />
 
 # :heart: Jobstory
 _When I'm looking for a serious connection with someone,  
@@ -46,4 +46,8 @@ In **Find Your Match** you can login into your account and you can register an a
 [MIT] (https://github.com/ralfz123/prototype_datingapp/blob/master/LICENSE.md)
 
 # :file_folder: Links resources
-...
+- De Vries, D. (2020, 1 januari). Express-server example. Geraadpleegd van https://github.com/cmda-bt/be-course-19-20/tree/master/examples/express-server  
+- De Vries, D. (2020, 1 januari). MongoDB example. Geraadpleegd van https://github.com/cmda-bt/be-course-19-20/tree/master/examples/mongodb-server  
+- Stack Overflow - Where Developers Learn, Share, & Build Careers. (2008, 15). Geraadpleegd van https://stackoverflow.com/  
+- Express - Node.js web application framework. (2017, 1 januari). Geraadpleegd van https://expressjs.com/  
+- Shiffman. (2020b, 1 januari). The Coding Train. Geraadpleegd van https://www.youtube.com/user/shiffman  
