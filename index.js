@@ -58,7 +58,7 @@ app.post('/', login);
 app.post('/registrate',urlencodedParser, makeUser);
 
 
-app.get('*', function(req, res) {res.send('Error 404 ')});
+app.get('*', function(req, res) {res.render('404error')});
 
 
 // getting data from database

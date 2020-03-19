@@ -13,31 +13,18 @@
         <h1>Hoe zie je eruit?</h1>
     </header> 
 
-    <main> foto rendert width size height
-        <div class="optionphoto" >
-        <img src="../static/img/cam.png" alt="">
-        <p>Gebruik camera</p>
-        <input type="file" accept="image/*;capture=camera">
-    </div>
-    <img src="/img/cam.png" alt="">
+    <main> 
+        <div class="optionphoto">
+            <label class="fileContainer" for=""></label>
+                  <img src="../static/img/gallery.png" alt="">
+                  <p>Upload foto</p>
+                  <input class="file" type="file" accept="image/*;capture=camera">
+             </label>
+        </div>
 
-    <p>or</p>
-
-    <div class="optionphoto">
-        <img src="../static/img/gallery.png" alt="">
-        <p>Upload foto</p>
-        <input type="file" accept="image/*;capture=camera">
-    </div>
-
-    <!-- choosen photos -->
-    <ol>
-        <li> <img src="" alt="foto1"> </li>
-        <li> <img src="" alt="foto2"> </li>
-        <li> <img src="" alt="foto3"> </li>
-        <li> <img src="" alt="foto4"> </li>
-        <li> <img src="" alt="foto5"> </li>
-        <li> <img src="" alt="foto6"> </li>
-    </ol>
+    <!-- choosen photo -->
+    <img class="renderedphoto" src=" <%= data.photo %> " alt="foto1">
+    
     <p><a class="back" href="registreer_p2">Back</a></p>
 
     <p><a class="next" href="registreer_p4">Next</a></p>

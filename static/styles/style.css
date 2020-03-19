@@ -459,16 +459,24 @@ h2{
     margin-top: 50px;
 }
 
+h2.error{
+    font-family: omnes-pro, sans-serif;
+    font-weight: 500;
+    margin
+}
+
 
 .optionphoto{
 display: flex;
 max-width: 90%;
 border-radius: 10px;
 text-align: center;
-margin:auto;
+margin: auto;
+margin-top: 50px;
 box-shadow: 3px 3px 10px grey;
-
+padding: 9px 0px;
 }
+
 
 .optionphoto input[type="file"]{
     /* border: 1px solid #ccc;
@@ -476,11 +484,10 @@ box-shadow: 3px 3px 10px grey;
     padding: 6px 12px;
     cursor: pointer; */
 
-    content: 'Select some files';
+    /* content: 'Select some files';
     display: inline-block;
     background: linear-gradient(top, #f9f9f9, #e3e3e3);
     border: 3px solid red ;
-    /* #999; */
     border-radius: 3px;
     padding: 5px;
     outline: none;
@@ -492,7 +499,7 @@ box-shadow: 3px 3px 10px grey;
     font-size: 10pt;
     width: 50%;
     margin: 30px 0px;
-    padding: 0px;
+    padding: 0px; */
     
 }
 
@@ -514,23 +521,30 @@ box-shadow: 3px 3px 10px grey;
     margin: auto;
 }
 
-ol{
-    max-width: 100%;
-    display: flex;
-    margin: auto;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    background: rgba(139, 75, 75, 0.1);
-    flex-wrap: wrap;
-    min-width: 50%;
-    text-align: center;
-    border-radius: 23px;
-
+.fileContainer{
+   
+        overflow: hidden;
+        position: relative;
 }
+    
+    .file {
+        cursor: inherit;
+        display: block;
+        font-size: 50px;
+        filter: alpha(opacity=0);
+        /* min-height: 100%; */
+        /* min-width: 100%; */
+        opacity: 0;
+        position: absolute;
+        /* right: 0; */
+        text-align: right;
+        /* top: 0; */
+    }
 
-ol li{
+
+.renderedphoto{
     min-width: 25%;
-    width: 10px;
+    /* width: 10px; */
     height: 10px;
     list-style-type: none;
     color:blue;
@@ -538,9 +552,14 @@ ol li{
     justify-content: space-around;
     flex-direction: row;
     border: 1px solid red;
-    padding: 48px;
-    margin: 8px;
+    /* padding: 48px; */
+    /* margin: 8px; */
     border-radius: 10px;
+
+    margin: auto;
+    width: 50%;
+    padding: 64px;
+    margin-top: 50px;
 
  }
 
@@ -551,6 +570,12 @@ p a{
 font-size: 1.2rem;
 /* text-decoration:red; */
 }
+
+.errorlogo{
+    margin-bottom: 100px;
+    width: 80%;
+}
+
 
 .registreer{
     background-color: #FA4E69;
