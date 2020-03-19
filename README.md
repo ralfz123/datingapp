@@ -1,5 +1,5 @@
 # Find Your Match!
-<img src="https://raw.githubusercontent.com/ralfz123/prototype_datingapp/master/docs/readme/design_mockup2.png" width="500" />
+<img src="https://raw.githubusercontent.com/ralfz123/prototype_datingapp/master/docs/readme/design_mockup2.png" width="1000" />
 
 # :heart: Jobstory
 _When I'm looking for a serious connection with someone,  
