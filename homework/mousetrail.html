@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Mouse-Trail opdracht</title>
+
+    <style>
+        body {
+          background: #07c721;
+        }
+        .puntje {
+          position: absolute;
+          top: 10px; left: 10px;
+          height: 40px; width: 50px;
+          border-radius: 100%;
+          background: #000000;
+          border-radius: 100%;
+        }
+      </style>
+      
+</head>
+    
+<body>    
+    <div class="puntje"></div>
+    <div class="puntje"></div>
+    <div class="puntje"></div>
+    <div class="puntje"></div>
+    <div class="puntje"></div>
+
+    <script>
+        let puntjes = document.getElementsByClassName("puntje");
+
+        window.addEventListener("mousemove", event => {      
+            let mouseX = event.clientX;
+            let mouseY = event.clientY;
+        
+            setTimeout(function() {
+                for (i = 0; i < puntjes.length; i++) {
+                    puntjes[i].style.left = mouseX - 10 + "px";
+                    puntjes[i].style.top = mouseY - 10 + "px";
+                }
+            }, 100); 
+        });
+      </script>
+</body>
+</html>

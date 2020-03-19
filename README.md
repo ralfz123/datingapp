@@ -43,7 +43,7 @@ In **Find Your Match** you can login into your account and you can register an a
 <img src="https://github.com/ralfz123/prototype_datingapp/blob/master/docs/readme/objectdb.png?raw=true" width="500" />
 
 # :cop: License
-[MIT] (https://github.com/ralfz123/prototype_datingapp/blob/master/LICENSE.md)
+[MIT](https://github.com/ralfz123/prototype_datingapp/blob/master/LICENSE.md)
 
 # :file_folder: Links resources
 - De Vries, D. (2020, 1 januari). Express-server example. Geraadpleegd van https://github.com/cmda-bt/be-course-19-20/tree/master/examples/express-server  
