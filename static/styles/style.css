@@ -76,6 +76,36 @@ h4{
     margin-top: 10px;
 }
 
+.profileheader{
+    background-image: linear-gradient(#B8456E, #FA4E6A);
+    /* z-index: 10; */
+    padding: 50px 0px;
+    border-radius: 10px;
+    box-shadow:  3px 3px 3px 3px #ccc;
+    display: flex;
+    /* width: 100vw; */
+
+}
+
+.profileheader > img{
+    width: 30%;
+    background-color: blue;
+    /* padding: 50px; */
+    margin: 0;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.profileheader > :nth-child(2){
+    width: 30%;
+    margin:0;
+    background-color: blanchedalmond;
+    border-radius: 50%;
+
+    flex-wrap: wrap;
+    flex-direction: row;
+} 
+
 .wrapper{
     position: relative;
     margin-top: 0.5rem;
@@ -268,49 +298,6 @@ form fieldset.p1 .firsttype{
     cursor: pointer;
   }
 
-/* .checkmark {
-    top: 30;
-    left: 30;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-    border-radius: 50%;
-} */
-
-/* On mouse-over, add a grey background color */
-/* .container:hover input ~ .checkmark {
-    background-color: #ccc;
-  } */
-  
-  /* When the radio button is checked, add a blue background */
-  /* .container input:checked ~ .checkmark {
-    background-color: #2196F3;
-  } */
-  
-  /* Create the indicator (the dot/circle - hidden when not checked) */
-  /* .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-   */
-  /* Show the indicator (dot/circle) when checked */
-  /* .container input:checked ~ .checkmark:after {
-    display: block;
-  } */
-  
-  /* Style the indicator (dot/circle) */
-  /* .container .checkmark:after {
-       top: 9px;
-      left: 9px;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: white;
-  }
- */
-
-
 
 
 
@@ -326,23 +313,6 @@ form fieldset.p1 input[type="radio"]{
 form fieldset.p1 input[type="radio"]:focus{
    box-shadow: none;
   }
-
-/* //absolute moet weg */
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 form.p2 fieldset input{
@@ -363,7 +333,6 @@ form.p2 fieldset input:focus{
     border: 1px solid #FD2755;
     outline: none;
     transition: ease-in-out 0.3s;
-    box-shadow: 3px 3px 5px grey;
 }
 
 form.p2 fieldset input::placeholder{
@@ -375,8 +344,6 @@ form input:focus{
     border: 1px solid #FD2755;
     outline: none;
     transition: ease-in-out 0.3s;
-    box-shadow: 3px 3px 5px grey;
-
 }
 
 form input.firsttype:focus{
@@ -462,19 +429,18 @@ h2{
 h2.error{
     font-family: omnes-pro, sans-serif;
     font-weight: 500;
-    margin
 }
 
 
 .optionphoto{
-display: flex;
-max-width: 90%;
-border-radius: 10px;
-text-align: center;
-margin: auto;
-margin-top: 50px;
-box-shadow: 3px 3px 10px grey;
-padding: 9px 0px;
+    display: flex;
+    max-width: 90%;
+    border-radius: 10px;
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+    box-shadow: 3px 3px 10px grey;
+    padding: 9px 0px;
 }
 
 
@@ -646,94 +612,3 @@ a.begin{
     margin-bottom: 30px;
 
 }
-
-
-
-
-
-/* iPad///Desktop Body
-@media only screen and (min-width: 600px) {
-    body {
-        background-color: white;
-        width: 100vw;
-    }
-}
- */
-
-
-/* Header */
-header{
-
-}
-
-/* Nav */
-header nav{
-
-}
-
-/* User */
-
-
-
-/* div{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100vw;
-    margin: 0px;
-    max-width: 200px;
-    padding: 10px;
-    border: 2px dotted green;
-}
-
-div a{
-    text-decoration: none;
-    cursor: pointer;
-    margin: 0px 0px;
-    padding: 0px 0px;
-    background-color: blue;
-    width: 50%;
-    
-}
-
-div a section {
-    cursor: pointer;
-    margin-right: 20px;
-    margin-top: 20px;
-    padding: 0px 0px;
-    border: 1px solid red;
-    width: 200px;
-    max-width: 200px;
-    background-color: grey;
-}
-
-div a section h3,ul{
-    text-decoration: rgb(154, 100, 182);
-}
-
-div a section img{
-    width: 50%;
-    height: 50%;
-    margin-right: 0px;
-}
-
-
-
-/* naam op user profile */
-/* h2{
-    margin-top: 20px;
-}
-
-.fotoprofiel{
-    width: 70%;
-    height: 70%;  
-    text-align: center; 
-    display: block;
-    /* margin-left: auto; */
-    /* margin-right: auto;
-}
-
-ol{
-background-color: darkorchid;
-margin-top: 20px;
-} */ 

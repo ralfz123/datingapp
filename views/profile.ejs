@@ -1,1 +1,76 @@
-<p>Database heeft het ontvangen</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('head') %>
+    <title>Profiel</title>
+</head>
+
+<body>
+    <div class="wrapper">
+<p>hi <%= data.firstName %> </p>
+     <header class="profileheader" >
+            <img src="../static/img/logoutbutton.svg" alt="">
+            <img src="../static/img/cam.png" alt="">
+     </header>
+
+    <main>
+        <legend>Wie ben jij?</legend>
+        <label for="firstName">Ik ben</label>
+        <input class="firsttype" type="text" name="firstName" placeholder="Voornaam" required>
+
+        
+        <label for="gender">en ben een</label>
+
+        <input type="radio" name="gender" value="man" checked="checked" required>
+        <label class="man" for="man">Man</label>
+        <span class="checkmark"></span>
+
+
+        <input type="radio" name="gender" value="vrouw" required>
+        <label for="vrouw">Vrouw</label>
+        <span class="checkmark"></span>
+
+
+        <input type="radio" name="gender" value="beide" required>
+        <label for="beide">Beide</label>
+        <span class="checkmark"></span>
+
+
+        
+        <label for="searchSex">en ben op zoek naar een</label>
+
+        <input type="radio" name="searchSex" value="man" checked="checked" required>
+        <label for="man">Man</label>
+        <span class="checkmark"></span>
+
+
+        <input type="radio" name="searchSex" value="vrouw" required>
+        <label for="vrouw">Vrouw</label>
+        <span class="checkmark"></span>
+
+
+        <input type="radio" name="searchSex" value="beide" required>
+        <label for="beide">Beide</label>
+        <span class="checkmark"></span>
+
+        <legend>Wie ben jij?</legend>
+        <label for="age">Hoe oud ben je?</label>
+        <input type="number" name="age" placeholder="Leeftijd" required>
+
+        <label for="hometown">Waar woon je?</label>
+        <input type="text" name="hometown" placeholder="Plaatsnaam" required>
+
+        <label for="email">Wat is je e-mail?</label>
+        <input type="text" name="email" placeholder="E-mailadres" required>
+
+        <label for="password">password</label>
+        <input type="password" name="password" placeholder="Password" required>
+    </main>
+
+    </div>
+    <% include('tail') %>
+ 
+</body>
+
+</html>

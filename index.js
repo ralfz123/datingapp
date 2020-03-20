@@ -15,6 +15,9 @@ const mongoose = require ('mongoose');
 const mongo = require ('mongodb');
 const session = require ('express-session');
 let usersMultiple;
+const ObjectID = mongo.ObjectID;
+
+
 
 // Database MongoDB
 require('dotenv').config()      
@@ -44,21 +47,41 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(urlencodedParser);
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+    secure: true
+}));
+
 
 
 // routing 
 app.get('/', function(req, res) {res.render('index.ejs')});
+app.get('/profile', function(req, res) {
+    console.log(req.session.userId)
+    db.collection('users').findOne({
+        _id : ObjectID(req.session.userId)
+    }).then(data=>{
+        res.render('profile.ejs' , {data})
+    }).catch(err=>{
+        console.log(err);
+        res.redirect('404error')
+    })
+});
+
 app.get('/registreer_p1', function(req, res) {res.render('registreer_p1.ejs')});
 app.get('/registreer_p2', function(req, res) {res.render('registreer_p2.ejs')});
 app.get('/registreer_p3', function(req, res) {res.render('registreer_p3.ejs')});
 app.get('/registreer_p4', function(req, res) {res.render('registreer_p4.ejs')});
+app.get('*', function(req, res) {res.render('404error')});
+
 // app.post('/test.ejs', addInlog);
 // app.get('/test', gettingData);
 app.post('/', login);
 app.post('/registrate',urlencodedParser, makeUser);
 
 
-app.get('*', function(req, res) {res.render('404error')});
 
 
 // getting data from database
@@ -109,16 +132,23 @@ function gettingData(req, res, next){
 //     });
 // }
 
-function login (req){
+function login (req, res){
     db.collection('users').findOne({
-        firstName: req.body.firstName
-    }).then(data=>console.log(data)), done;
-
-    function done(req,res){
-        if ({firstName: password}){
-            res.redirect('/succes.ejs')
+        firstName: req.body.firstName,
+        password: req.body.password
+    }).then(
+        data=>{
+            console.log('Ingelogd!');
+            req.session.userId = data._id;
+        if (data){
+            res.redirect('/profile')
         }
-    }
+    }).catch(err=>{
+        console.log(err);
+        res.redirect('404error')
+    });
+
+   
 }
 
 
@@ -132,7 +162,7 @@ function makeUser(req,res){
     let hometown = req.body.hometown;
     let email = req.body.email;
     let password = req.body.password;
-    // let photos = req.body.photos;
+    let photo = req.body.photo;
 
     let data = {
         'firstName' : firstName,
@@ -141,8 +171,8 @@ function makeUser(req,res){
         'age' : age,
         'hometown' : hometown,
         'email' : email,
-        'password' : password
-        // 'photos' : photos
+        'password' : password,
+        'photo' : photo
     };
 
     db.collection('users').insertOne(data, function(err, collection){
@@ -151,7 +181,7 @@ function makeUser(req,res){
         } else {
             console.log('User added');
             console.log(data)
-            res.render('succes.ejs');
+            res.render('registreer_p3.ejs');
         }
     })
 }
