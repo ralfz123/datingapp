@@ -70,11 +70,26 @@ app.get('/profile', function(req, res) {
     })
 });
 
+app.get('/profileedit', function(req, res) {
+    console.log('Bewerken');
+    db.collection('users').update({
+        _id : ObjectID(req.session.userId)
+    }).then(data=>{
+        res.render('profileedit.ejs' , {data})
+    }).catch(err=>{
+        console.log(err);
+        res.redirect('404error')
+    })
+});
+
+
 app.get('/registreer_p1', function(req, res) {res.render('registreer_p1.ejs')});
 app.get('/registreer_p2', function(req, res) {res.render('registreer_p2.ejs')});
 app.get('/registreer_p3', function(req, res) {res.render('registreer_p3.ejs')});
 app.get('/registreer_p4', function(req, res) {res.render('registreer_p4.ejs')});
 app.get('*', function(req, res) {res.render('404error')});
+
+app.get('/logout', logout);
 
 // app.post('/test.ejs', addInlog);
 // app.get('/test', gettingData);
@@ -99,39 +114,6 @@ function gettingData(req, res, next){
 }
 
 
-// function addInlog(req, res, next){
-//     db.collection('users').insertOne({
-//         username: req.body.username,
-//         password: req.body.password
-//     }, done)
-
-//     function done (err, data){
-//         if (err){
-//             console.log('You have got an error!')
-//             next(err)
-//         } else{
-//             console.log('Succeeded')
-//             res.render('/', {data: data})
-//         }
-//     }
-// }
-
-// check if there is an user and also logs in
-// function login (req, res){
-//     usersMultiple.find({}, { projection: { _id: 0, password: 0 } }).toArray(function(err, collection) {
-//         if (err) throw err;
-//         const gebruiker = collection.find(collection => collection.username === req.body.username && collection.password === req.body.password);
-//         if (gebruiker === undefined) {
-//             console.log('Account not found :(');
-//         } else {
-//             console.log(gebruiker);
-//             console.log('Account found :) !');
-//             console.log(id)
-//             res.render('succes.ejs');
-//         }
-//     });
-// }
-
 function login (req, res){
     db.collection('users').findOne({
         firstName: req.body.firstName,
@@ -151,9 +133,7 @@ function login (req, res){
    
 }
 
-
-
-//r register and the app makes an user in de DB
+// register and the app makes an user in de DB
 function makeUser(req,res){
     let firstName = req.body.firstName;
     let gender = req.body.gender;
@@ -180,11 +160,27 @@ function makeUser(req,res){
             throw err;
         } else {
             console.log('User added');
-            console.log(data)
+            console.log(data);
             res.render('registreer_p3.ejs');
         }
     })
 }
+
+
+function logout(req, res){
+    req.session.destroy(function (err){
+        if (err){
+            console.log(err)
+            next (err)
+        } else{
+            res.redirect('/')
+        }
+    })
+}
+
+
+
+
 
 
 

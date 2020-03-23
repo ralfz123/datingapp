@@ -14,13 +14,16 @@
     </header> 
 
     <main> 
-        <div class="optionphoto">
-            <label class="fileContainer" for=""></label>
-                  <img src="../static/img/gallery.png" alt="">
-                  <p>Upload foto</p>
-                  <input class="file" type="file" name="photo" accept="image/*;capture=camera">
+        <form action="registrate"  enctype="multipart/form-data">
+            <div class="optionphoto">
+              <label class="fileContainer" for=""></label>
+                    <img src="../static/img/gallery.png" alt="">
+                     <p>Upload foto</p>
+                     <input class="file" type="file" name="photo" accept="image/*;capture=camera">
              </label>
-        </div>
+            </div>
+            <button type="submit"> Add</button>
+        </form>
 
     <!-- choosen photo -->
     <img class="renderedphoto" src=" " alt="foto1">
