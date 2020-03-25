@@ -26,19 +26,22 @@
 
 // }
 
-
+// wat gebeurt hier?
 var fieldset = document.getElementsByTagName('fieldset');
 var button = document.getElementsByTagName('button');
 var li = document.getElementsByTagName('li');
 var form = document.getElementsByTagName('form');
 form.onsubmit =()=>{return false};
 
+
+// wat gebeurt hier?
 var current_fieldset = 0;
 fieldset[current_fieldset].style.display = "block";
 if (current_fieldset == 0){
     button[0].style.display = "none";
     li[0].style.backgroundColor = "red";
 }
+// wat gebeurt hier?
 
 button[1].onclick = ()=>{
     current_fieldset++;
@@ -60,6 +63,8 @@ button[1].onclick = ()=>{
         }
     }
 }
+// wat gebeurt hier?
+
 button[0].onclick = ()=>{
     if (current_fieldset > 0){
         current_fieldset--;

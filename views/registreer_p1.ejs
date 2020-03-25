@@ -139,12 +139,16 @@
         </fieldset>
 
 
-        <fieldset class="optionphoto">
-            <label class="fileContainer" for=""></label>
+        <fieldset>
+          <div class="optionphoto">
+            <label class="fileContainer" for="">
+                <input class="file" type="file" name="photo" accept="image/*;capture=camera">
                 <img src="../static/img/gallery.png" alt="">
                 <p>Upload foto</p>
-                <input class="file" type="file" name="photo" accept="image/*;capture=camera">
             </label>
+          </div>  
+            <img class="renderedphoto" src=" " alt="foto1">
+
         </fieldset>
 
         <button class="back" name="back">Terug</button>
