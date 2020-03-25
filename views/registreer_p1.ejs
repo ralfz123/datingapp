@@ -17,7 +17,7 @@
     <main>
 
     <!-- gegevens -->
-    <form action="registrate" method="POST">
+    <!-- <form action="registrate" method="POST">
         <fieldset class="p1">
             <legend>Wie ben jij?</legend>
             <label for="firstName">Ik ben</label>
@@ -79,7 +79,85 @@
     <div class="buttons">
         <a class="back" href="/">Back</a>
         <a class="next" href="registreer_p2">Next</a>
-    </div>
+    </div> -->
+
+
+    <form class="registratepage" action="registrate" method="POST">
+        <fieldset>
+            <label for="firstName">Ik ben</label>
+            <input class="firsttype" type="text" name="firstName" placeholder="Voornaam" required>
+
+            <span></span>            
+            <label for="gender">en ben een</label>
+
+            <input type="radio" name="gender" value="man" checked="checked" required>
+            <label class="man" for="man">Man</label>
+            <span class="checkmark"></span>
+
+
+            <input type="radio" name="gender" value="vrouw" required>
+            <label for="vrouw">Vrouw</label>
+            <span class="checkmark"></span>
+
+
+            <input type="radio" name="gender" value="beide" required>
+            <label for="beide">Beide</label>
+            <span class="checkmark"></span>
+
+
+            
+            <label for="searchSex">en ben op zoek naar een</label>
+
+            <input type="radio" name="searchSex" value="man" checked="checked" required>
+            <label for="man">Man</label>
+            <span class="checkmark"></span>
+
+
+            <input type="radio" name="searchSex" value="vrouw" required>
+            <label for="vrouw">Vrouw</label>
+            <span class="checkmark"></span>
+
+
+            <input type="radio" name="searchSex" value="beide" required>
+            <label for="beide">Beide</label>
+            <span class="checkmark"></span>
+        </fieldset>
+
+
+        <fieldset>
+            <label for="age">Hoe oud ben je?</label>
+            <input type="number" name="age" placeholder="Leeftijd" required>
+
+            <label for="hometown">Waar woon je?</label>
+            <input type="text" name="hometown" placeholder="Plaatsnaam" required>
+
+            <label for="email">Wat is je e-mail?</label>
+            <input type="text" name="email" placeholder="E-mailadres" required>
+            
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password" required>
+        </fieldset>
+
+
+        <fieldset class="optionphoto">
+            <label class="fileContainer" for=""></label>
+                <img src="../static/img/gallery.png" alt="">
+                <p>Upload foto</p>
+                <input class="file" type="file" name="photo" accept="image/*;capture=camera">
+            </label>
+        </fieldset>
+
+        <button class="back" name="back">Terug</button>
+        <button class="next" name="next">Next</button>
+
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </form>
+
 
     <!-- <p><a class="back" href="/">Back</a></p>
 
@@ -88,7 +166,7 @@
     </main>
 
 </div>
-    <% include('tail') %>
+    <%- include ('tail.ejs') %>
  
 </body>
 
