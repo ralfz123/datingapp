@@ -136,6 +136,157 @@ fieldset {
     text-align: center;
 }
 
+.inlog label{
+    font-family: 'Kalam';
+    font-size: 1.5rem;
+
+}
+
+/********************
+    MULTI STEP FORM
+********************/
+
+.registratepage fieldset{
+    margin: 15px auto;
+    display: none;
+}
+
+.registratepage fieldset label{
+    display: block;
+    padding: 20px;
+    font-size: 25px;
+    font-family: 'Kalam';
+
+}
+.registratepage fieldset .man, .registratepage fieldset .vrouw, .registratepage fieldset .beide{
+    font-family: omnes-pro, sans-serif;
+    display: inline;
+    /* background-color: red; */
+    padding: 4px;
+    padding-top: 12px;
+    margin: auto;
+    margin-bottom: 18px;
+    font-size: 1.4rem;
+}
+
+.registratepage fieldset input{
+    /* width: 96%; */
+    border-bottom: 1px solid rgb(255, 0, 0);
+    /* margin-left: 20px; */
+    font-family: omnes-pro, sans-serif;
+}
+
+.registratepage fieldset input::placeholder{
+    font-family: omnes-pro, sans-serif;
+}
+
+.registratepage button{
+    margin: 20px;
+    padding: 10px;
+    width: 100px;
+    font-family: omnes-pro, sans-serif;
+    border: none;
+    cursor: pointer;
+}
+.registratepage fieldset input[type="radio"]{
+    display: inline-flex;
+    width: 20px;
+}
+
+.registratepage .optionphoto{
+    padding: 0px;
+}
+
+.registratepage .optionphoto img, .registratepage fieldset p{
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.registratepage .optionphoto img{
+    width: 25%;
+    height: 55%;
+}
+
+.registratepage .optionphoto p{
+    width: 92%;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: auto;
+}
+
+
+.registratepage .optionphoto .fileContainer{
+    overflow: hidden;
+    position: relative;
+}
+    
+.registratepage .optionphoto .file {
+    cursor: pointer;
+    /* display: inline; */
+    font-size: 12px;
+    filter: alpha(opacity=0);
+    /* min-height: 100%; */
+    /* min-width: 100%; */
+    opacity: 1;
+    /* position: absolute; */
+    left: 0;
+    right: 0;
+    text-align: center;
+    /* top: 0; */
+    padding: 52px;
+    width: 80vw;
+    margin: auto;
+}
+
+
+
+.registratepage ul{
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+    float: right;
+}
+
+.registratepage ul li{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ededed;
+    margin: 2px 5px;
+    display: inline-flex;
+}
+
+
+
+
+.registratepage fieldset input[type="radio"]{
+    /* position: absolute;
+    opacity: 20;
+    cursor: pointer;
+    height: 25px;
+    width: 21px;
+    background-color: red; */
+    /* margin-left: 50px; */
+
+        /* position: absolute; */
+        opacity: 20;
+        cursor: pointer;
+        height: 25px;
+        width: 21px;
+        background-color: red;
+        /* margin-left: 50px; */
+        /* margin-bottom: 14px;*/
+
+}
+
+
+  .registratepage fieldset input[type="radio"]:focus{
+     box-shadow: none;
+    }
+
+
+
+
 
 
 fieldset.p1{
@@ -153,7 +304,7 @@ legend{
     display: none;
 }
 
-label:first-child, label:nth-child(2), label:nth-child(3), label:nth-child(4), label:nth-child(5), label:nth-child(14){
+/* label:first-child, label:nth-child(2), label:nth-child(3), label:nth-child(4), label:nth-child(5), label:nth-child(14){
     flex-wrap: wrap;
     justify-content: center;
     font-family: 'Kalam';
@@ -162,13 +313,12 @@ label:first-child, label:nth-child(2), label:nth-child(3), label:nth-child(4), l
     font-size: 1.6rem;
     text-align: center;
     letter-spacing: 1px;
-}
+} */
 
 
 
 
 
-/* .p1 label:nth-child(3), label:nth-child(4), label:nth-child(5) */
 
 input[type="radio"].toggle {
   display: none;
@@ -415,7 +565,7 @@ h2.error{
 }
 
 
-.optionphoto input[type="file"]{
+/* .optionphoto input[type="file"]{ */
     /* border: 1px solid #ccc;
     display: inline-block;
     padding: 6px 12px;
@@ -438,7 +588,7 @@ h2.error{
     margin: 30px 0px;
     padding: 0px; */
     
-}
+/* } */
 
 
 .optionphoto img, .optionphoto p{
@@ -583,107 +733,4 @@ a.begin{
 
 }
 
-
-/********************
-    MULTI STEP FORM
-********************/
-
-.registratepage fieldset{
-    margin: 15px auto;
-    display: none;
-}
-
-.registratepage fieldset label{
-    display: block;
-    padding: 20px;
-    font-size: 25px;
-}
-
-.registratepage fieldset input{
-    /* width: 96%; */
-    border-bottom: 1px solid rgb(255, 0, 0);
-    margin-left: 20px;
-}
-
-.registratepage button{
-    margin: 20px;
-    padding: 10px;
-    width: 100px;
-    font-family: omnes-pro, sans-serif;
-    border: none;
-    cursor: pointer;
-}
-.registratepage fieldset input[type="radio"]{
-    display: inline-flex;
-    width: 20px;
-}
-
-.registratepage .optionphoto{
-    padding: 0px;
-}
-
-.registratepage .optionphoto img, .registratepage fieldset p{
-    flex-wrap: wrap;
-    justify-content: start;
-}
-
-.registratepage .optionphoto img{
-    width: 25%;
-    height: 55%;
-}
-
-.registratepage .optionphoto p{
-    width: 92%;
-    font-size: 1.5rem;
-    font-weight: 300;
-    margin: auto;
-}
-
-
-.registratepage .optionphoto .fileContainer{
-    overflow: hidden;
-    position: relative;
-}
-    
-.registratepage .optionphoto .file {
-    cursor: pointer;
-    display: inline;
-    font-size: 12px;
-    filter: alpha(opacity=0);
-    /* min-height: 100%; */
-    /* min-width: 100%; */
-    opacity: 1;
-    /* position: absolute; */
-    left: 0;
-    right: 0;
-    text-align: center;
-    /* top: 0; */
-    padding: 52px;
-    width: 80vw;
-    margin: auto;
-}
-
-
-
-
-
-
-
-
-
-.registratepage ul{
-    width: 100%;
-    margin: 20px auto;
-    text-align: center;
-    float: right;
-}
-
-.registratepage ul li{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #ededed;
-    margin: 2px 5px;
-    display: inline-flex;
-}
 

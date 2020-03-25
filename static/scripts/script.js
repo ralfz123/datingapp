@@ -46,7 +46,7 @@ if (current_fieldset == 0){
 button[1].onclick = ()=>{
     current_fieldset++;
     var back_fieldset = current_fieldset - 1;
-    if ((current_fieldset > 0) && (current_fieldset < 4)){
+    if ((current_fieldset > 0) && (current_fieldset < 3)){
         button[0].style.display = "block";
         fieldset[current_fieldset].style.display = "block";
         fieldset[back_fieldset].style.display = "none";
@@ -74,7 +74,7 @@ button[0].onclick = ()=>{
         li[current_fieldset].style.backgroundColor = "red";
         li[back_fieldset].style.backgroundColor = "#ededed";
         if (current_fieldset < 3){
-            button[1].innerHTML = "Next";
+            button[1].innerHTML = "Verder";
         }
 
     }
