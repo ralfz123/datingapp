@@ -26,7 +26,7 @@
 
 // }
 
-// wat gebeurt hier?
+// Beschrijven wat er gebeurd
 var fieldset = document.getElementsByTagName('fieldset');
 var button = document.getElementsByTagName('button');
 var li = document.getElementsByTagName('li');
@@ -34,7 +34,7 @@ var form = document.getElementsByTagName('form');
 form.onsubmit =()=>{return false};
 
 
-// wat gebeurt hier?
+// Beschrijven wat er gebeurd
 var current_fieldset = 0;
 fieldset[current_fieldset].style.display = "block";
 if (current_fieldset == 0){
@@ -43,7 +43,7 @@ if (current_fieldset == 0){
     button[0].style.display = "inline";
 
 }
-// wat gebeurt hier?
+// Beschrijven wat er gebeurd
 
 button[1].onclick = ()=>{
     current_fieldset++;
@@ -53,7 +53,7 @@ button[1].onclick = ()=>{
         fieldset[current_fieldset].style.display = "block";
         fieldset[back_fieldset].style.display = "none";
         li[current_fieldset].style.backgroundColor = "red";
-        li[back_fieldset].style.backgroundColor = "#ededed";
+        li[back_fieldset].style.backgroundColor = "#b3b3b3";
         if (current_fieldset == 4){
             button[1].innerHTML = "Submit";
         }
@@ -64,7 +64,7 @@ button[1].onclick = ()=>{
         }
     }
 }
-// wat gebeurt hier?
+// Beschrijven wat er gebeurd
 
 button[0].onclick = ()=>{
     if (current_fieldset > 0){
@@ -73,14 +73,16 @@ button[0].onclick = ()=>{
         fieldset[current_fieldset].style.display = "block";
         fieldset[back_fieldset].style.display = "none";
         li[current_fieldset].style.backgroundColor = "red";
-        li[back_fieldset].style.backgroundColor = "#ededed";
-        if (current_fieldset < 3){
+        li[back_fieldset].style.backgroundColor = "#b3b3b3";
+        if (current_fieldset < 4){
             button[1].innerHTML = "Verder";
         }
 
     }
     if (current_fieldset == 0){
         // button[0].style.display = "none";
-        
+        location.href = ('/');
     }
 }
+
+// location.href = ('../../views/index.ejs');

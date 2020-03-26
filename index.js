@@ -11,7 +11,8 @@ const urlencodedParser = bodyParser.urlencoded({
     extended: true
 });
 const mongoose = require ('mongoose');
-// const multer= require('multer');
+const multer= require('multer');
+const upload = multer({ dest: 'uploads/' })
 const mongo = require ('mongodb');
 const session = require ('express-session');
 let usersMultiple;
@@ -94,7 +95,7 @@ app.get('/logout', logout);
 // app.post('/test.ejs', addInlog);
 // app.get('/test', gettingData);
 app.post('/', login);
-app.post('/registrate',urlencodedParser, makeUser);
+app.post('/registrate', upload.single('photo'), urlencodedParser, makeUser);
 
 
 
@@ -161,7 +162,7 @@ function makeUser(req,res){
         } else {
             console.log('User added');
             console.log(data);
-            res.redirect('registreer_p4.ejs');
+            res.render('registreer_p4.ejs');
         }
     })
 }
