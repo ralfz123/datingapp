@@ -1,5 +1,6 @@
 //import express packages
 const express = require("express");
+const session = require("express-session");
 const app = express();
 const port = 8000;
 const path = require("path");
@@ -13,9 +14,9 @@ const mongoose = require("mongoose"); // COMMENT: Importing mongoose but not usi
 const multer = require("multer");
 const upload = multer({ dest: "uploads/" });
 const mongo = require("mongodb");
-const session = require("express-session");
-let usersMultiple;
 const ObjectID = mongo.ObjectID;
+
+let usersMultiple;
 
 // Database MongoDB
 require("dotenv").config();
@@ -37,7 +38,7 @@ mongo.MongoClient.connect(uri, function(err, client) {
 // Using static files from static directory:
 app.use("/static", express.static("static"));
 
-//Locate ejs(templating) (and views)
+// Locate ejs(templating) (and views)
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
@@ -85,6 +86,7 @@ app.get("/profileedit", function(req, res) {
     });
 });
 
+// COMMENT: It can be a way of solving the progessive enhancement issue with a long form this way, but your slider is not really a slider right now
 app.get("/registreer_p1", function(req, res) {
   res.render("registreer_p1.ejs");
 });
@@ -105,7 +107,6 @@ app.post("/logout", function (req, res) {
     req.session.destroy();
     res.redirect('/');
 });
-
 app.post("/", login);
 app.post("/registrate", upload.single("photo"), urlencodedParser, makeUser);
 
@@ -130,24 +131,16 @@ function login(req, res) {
 
 // register and the app makes an user in de DB
 function makeUser(req, res) {
-  let firstName = req.body.firstName;
-  let gender = req.body.gender;
-  let searchSex = req.body.searchSex;
-  let age = req.body.age;
-  let hometown = req.body.hometown;
-  let email = req.body.email;
-  let password = req.body.password;
-  let photo = req.body.photo;
-
-  let data = {
-    firstName: firstName,
-    gender: gender,
-    searchSex: searchSex,
-    age: age,
-    hometown: hometown,
-    email: email,
-    password: password,
-    photo: photo
+    // You had this as a let, while you don't manipulate this data. Then it should be a const.
+  const data = {
+    firstName: req.body.firstName,
+    gender: req.body.gender,
+    searchSex: req.body.searchSex,
+    age: req.body.age,
+    hometown: req.body.hometown,
+    email: req.body.email,
+    password: req.body.password,
+    photo: req.body.photo
   };
 
   db.collection("users").insertOne(data, function(err, collection) {
@@ -163,3 +156,6 @@ function makeUser(req, res) {
 
 // Server is listening on port:
 app.listen(port, () => console.log("listening on port " + port));
+
+// COMMENT: I see you're using different ways to get items from the database:
+// callbacks & promises. Try to stick to one of them to stay consistant.
