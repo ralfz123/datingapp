@@ -45,8 +45,7 @@ if (current_fieldset == 0){
     button[0].style.display = "inline";
 
 }
-// Beschrijven wat er gebeurd
-
+// When the right button ('Verder') gets hit
 button[1].onclick = ()=>{
     current_fieldset++;
     var back_fieldset = current_fieldset - 1;
@@ -66,8 +65,8 @@ button[1].onclick = ()=>{
         }
     }
 }
-// Beschrijven wat er gebeurd
 
+// When the left button ('Terug') gets hit
 button[0].onclick = ()=>{
     if (current_fieldset > 0){
              current_fieldset--;
@@ -76,10 +75,9 @@ button[0].onclick = ()=>{
              fieldset[back_fieldset].style.display = "none";
              li[current_fieldset].style.backgroundColor = "red";
              li[back_fieldset].style.backgroundColor = "#b3b3b3";
-             button[1].innerHTML = "Verder";
-                // if (current_fieldset < 4){
-             //     // button[1].innerHTML = "Verder";
-             // }
+                if (current_fieldset < 2){
+                 button[1].innerHTML = "Verder";
+             }
 
     }
     if (current_fieldset == 0){

@@ -16,21 +16,21 @@
      </header>
 
     <main>
-        <form action="">
+        <form class="profileform" action="">
         <legend>Wie ben jij?</legend>
         <label for="firstName">Voornaam</label>
         <input class="firsttype" type="text" name="firstName" placeholder="Voornaam" required> <%= data.firstName %>
 
 
         <label for="age">Leeftijd</label>
-        <input type="number" name="age" placeholder="Leeftijd" required>
+        <input type="number" name="age" placeholder="Leeftijd" required><%= data.age %>
 
 
         <label for="hometown">Plaatsnaam</label>
-        <input type="text" name="hometown" placeholder="Plaatsnaam" required>
+        <input type="text" name="hometown" placeholder="Plaatsnaam" required><%= data.hometown %>
 
 
-        <label for="gender">Geslacht</label>
+        <label for="gender">Geslacht</label><%= data.gender %>
 
         <input type="radio" name="gender" value="man" checked="checked" required>
         <label class="man" for="man">Man</label>
@@ -45,7 +45,7 @@
         <span class="checkmark"></span>
 
         
-        <label for="searchSex">Zoekt naar</label>
+        <label for="searchSex">Zoekt naar</label><%= data.searchSex %>
 
         <input type="radio" name="searchSex" value="man" checked="checked" required>
         <label for="man">Man</label>
@@ -61,11 +61,11 @@
 
 
         <label for="email">E-mail</label>
-        <input type="text" name="email" placeholder="E-mailadres" required>
+        <input type="text" name="email" placeholder="E-mailadres" required><%= data.email %>
 
         <label for="password">Wachtwoord</label>
-        <input type="password" name="password" placeholder="Password" required>
-
+        <input type="password" name="password" placeholder="Password" required><%= data.password %>
+<%= data.firstName %>
         <a class="next" href="profileedit">Edit</a>
     </form>
     </main>
