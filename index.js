@@ -74,20 +74,20 @@ app.get('/profile', function(req, res) {
     });
 });
 
-app.get('/profileedit', function(req, res) {
-    console.log('Bewerken');
-    db.collection('users');
-        .update({
-            _id : ObjectID(req.session.userId);
-    })
-    .then(data=>{
-        res.render('profileedit.ejs' , {data});
-    })
-    .catch(err=>{
-        console.log(err);
-        res.redirect('404error');
-    });
-});
+// app.get('/profileedit', function(req, res) {
+//     console.log('Bewerken');
+//     db.collection('users');
+//         .update({
+//             _id : ObjectID(req.session.userId);
+//     })
+//     .then(data=>{
+//         res.render('profileedit.ejs' , {data});
+//     })
+//     .catch(err=>{
+//         console.log(err);
+//         res.redirect('404error');
+//     });
+// });
 
 
 app.get('/registreer_p1', function(req, res) {
@@ -106,13 +106,17 @@ app.get('*', function(req, res) {
     res.render('404error');
 });
 
-app.get('/logout', logout);
+// app.get('/logout', logout);
 
 // app.post('/test.ejs', addInlog);
 // app.get('/test', gettingData);
 app.post('/', login);
 app.post('/registrate', upload.single('photo'), urlencodedParser, makeUser);
-
+app.post('/logout', function (req, res) {
+    req.session.destroy();
+    res.redirect('/');
+    console.log("Uitgelogd!")
+});
 
 
 
@@ -184,16 +188,16 @@ function makeUser(req, res) {
 }
 
 
-function logout(req, res){
-    req.session.destroy(function (err){
-        if (err){
-            console.log(err)
-            next (err)
-        } else{
-            res.redirect('/')
-        }
-    })
-}
+// function logout(req, res){
+//     req.session.destroy(function (err){
+//         if (err){
+//             console.log(err)
+//             next (err)
+//         } else{
+//             res.redirect('/')
+//         }
+//     })
+// }
 
 
 // wachtwoord vergeten--> nieuwe instellen
