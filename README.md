@@ -30,12 +30,12 @@ npm install
 
 # :computer: Usage
 1.   
-- Run Find Your Match:  
+Run Find Your Match:  
 ```
 npm run start
 ```   
-    or  
-- Run developer mode:  
+or  
+Run developer mode:  
 ```
 npm run startdev
 ```
