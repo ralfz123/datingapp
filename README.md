@@ -19,20 +19,28 @@ In **Find Your Match** you can login into your account and you can register an a
 
 # :gear: Install
 1. Clone the repository:  
-```$ git clone https://github.com/ralfz123/prototype_datingapp.git```
+```
+git clone https://github.com/ralfz123/prototype_datingapp.git
+```
 
 2. Install dependencies   
-```$ npm install```
+```
+npm install
+```
 
 # :computer: Usage
 1.   
 - Run Find Your Match:  
-```$ npm run start```   
+```
+npm run start
+```   
     or  
 - Run developer mode:  
-```$ npm run startdev```
+```
+npm run startdev
+```
 
-2. To use the app, go to ```localhost:8000``` in your browser.   
+2. To use the app, go to http://localhost:8000/ in your browser.   
 (:heavy_exclamation_mark: Ask me the link to connect to my database :heavy_exclamation_mark:) 
 
 3. Use the Inspector by pressing Cmd + Option + I (Mac) or F12 (Windows). Then click on the button to change your screen to mobile (iPhone 6/7/8). The app currently works only on Mobile Device. That's it! :white_check_mark:   
@@ -46,8 +54,8 @@ In **Find Your Match** you can login into your account and you can register an a
 [MIT](https://github.com/ralfz123/prototype_datingapp/blob/master/LICENSE.md)
 
 # :file_folder: Links resources
-- De Vries, D. (2020, 1 januari). Express-server example. Geraadpleegd van https://github.com/cmda-bt/be-course-19-20/tree/master/examples/express-server  
-- De Vries, D. (2020, 1 januari). MongoDB example. Geraadpleegd van https://github.com/cmda-bt/be-course-19-20/tree/master/examples/mongodb-server  
-- Stack Overflow - Where Developers Learn, Share, & Build Careers. (2008, 15). Geraadpleegd van https://stackoverflow.com/  
-- Express - Node.js web application framework. (2017, 1 januari). Geraadpleegd van https://expressjs.com/  
-- Shiffman. (2020b, 1 januari). The Coding Train. Geraadpleegd van https://www.youtube.com/user/shiffman  
+- De Vries, D. (2020, January 1). Express server example. Consulted from https://github.com/cmda-bt/be-course-19-20/tree/master/examples/express-server  
+- De Vries, D. (2020, January 1). MongoDB example. Consulted from https://github.com/cmda-bt/be-course-19-20/tree/master/examples/mongodb-server  
+- Stack Overflow - Where Developers Learn, Share, & Build Careers. (2008, September 15). Consulted from https://stackoverflow.com/  
+- Express - Node.js web application framework. (2017, January 1). Consulted from https://expressjs.com/  
+- Shiffman. (2020, January 1). The Coding Train. Consulted from https://www.youtube.com/user/shiffman  
