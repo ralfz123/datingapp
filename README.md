@@ -50,8 +50,6 @@ npm run startdev
 <img src="https://github.com/ralfz123/prototype_datingapp/blob/master/docs/readme/db.png?raw=true" width="500" />
 <img src="https://github.com/ralfz123/prototype_datingapp/blob/master/docs/readme/objectdb.png?raw=true" width="500" />
 
-# :cop: License
-[MIT](https://github.com/ralfz123/prototype_datingapp/blob/master/LICENSE.md)
 
 # :file_folder: Links resources
 - De Vries, D. (2020, January 1). Express server example. Consulted from https://github.com/cmda-bt/be-course-19-20/tree/master/examples/express-server  
@@ -59,3 +57,6 @@ npm run startdev
 - Stack Overflow - Where Developers Learn, Share, & Build Careers. (2008, September 15). Consulted from https://stackoverflow.com/  
 - Express - Node.js web application framework. (2017, January 1). Consulted from https://expressjs.com/  
 - Shiffman. (2020, January 1). The Coding Train. Consulted from https://www.youtube.com/user/shiffman  
+
+# :cop: License
+[MIT © License](https://github.com/ralfz123/prototype_datingapp/blob/master/LICENSE.md)
