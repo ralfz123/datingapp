@@ -95,39 +95,68 @@ h4{
     padding: 50px 0px;
     border-radius: 10px;
     /* box-shadow:  3px 3px 3px 3px #ccc; */
-    display: flex;
+    /* display: flex; */
     /* width: 100vw; */
-
+    /* padding-bottom: 140px; */
+    height: 218px;
 }
 
-/* .profileheader > img{
+ /* .profileheader > img{
     width: 30%;
     background-color: blue;
     margin: 0;
     flex-wrap: wrap;
     flex-direction: row;
+} */
+
+.profileheader > p {
+    position: absolute;
+    z-index: 10;
+    color: white;
+    font-family: omnes-pro, sans-serif;
+    font-weight: 300;
+    font-size: 2rem;
+    top: 0%;
+    padding: 0;
+    margin: 0;
+    left: 33%;
 }
 
-.profileheader > :nth-child(2){
+.profileheader > img {
     width: 30%;
-    margin:0;
-    background-color: blanchedalmond;
+    margin: 0;
+    background-color: steelblue;
     border-radius: 50%;
     transform: rotate(360deg);
     transition: 0.5s transform;
+    left: 35%;
+    position: absolute;
+} 
 
-    flex-wrap: wrap;
-    flex-direction: row;
-}  */
 
-/* .profileheader .logout {
-    background-image: url(../static/img/logoutbutton.svg);
-} */
 
-.profileheader > form > button > img {
-    width: 20%;
+.profileheader > form {
+    width: 30%;
 }
 
+.profileheader > form > button {
+    width: 15%;
+    position: absolute;
+    /* border: 1px solid white; */
+    left: 82%;
+    top: 2%;
+    margin: 0;
+    padding: 5px;
+    box-shadow: 2px 2px 3px black;
+    background: rgb(231, 186, 202);
+}
+
+.profileheader > form > button > img {
+    width: 100%;
+}
+.profileheader > form > button > img:hover {
+    fill: red;
+}
 
 .wrapper{
     position: relative;
@@ -139,7 +168,7 @@ h4{
     box-shadow: 3px 3px 32px rgba(0, 0, 0, 0.25);
     perspective: 1000;
     height: 100%;
-    border-radius: 5px;
+    border-radius: 10px;
     /* padding-bottom: 152px */
 }
 
