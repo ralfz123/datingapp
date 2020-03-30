@@ -29,9 +29,8 @@ body {
         background-image: url("../img/background2.jpg");
         background-size: 110%;
         background-repeat: no-repeat;
-        /* background-color: red; */
 
-        /* width: 100vw; */
+        width: 100vw;
     }
 }
 
@@ -43,7 +42,21 @@ body {
         background-repeat: no-repeat;
         /* background-color: red; */
 
-        /* width: 100vw; */
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        
+    }
+
+    .wrapper {
+        width: 100vw;
+
+    }
+
+    body main {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
     }
 }
 
@@ -126,6 +139,36 @@ h4{
     border-radius: 5px;
     /* padding-bottom: 152px */
 }
+
+
+/* @media only screen and (min-width: 600px) {
+    body {
+        background-image: url("../img/background2.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        
+    }
+
+    .wrapper {
+        width: 100vw;
+
+    }
+
+    main {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+    }
+} */
+
+
+
+
+
 
 /* source: https://blog.alexdevero.com/flipping-login-signup-form-css/ */
 
@@ -490,8 +533,8 @@ form input.firsttype:focus{
     .wrapper{
         margin-right: auto;
         margin-left: auto;
-        max-width: 960px;
-        width: 100%;
+        max-width: 30%;
+        /* width: 100%; */
         padding: 0px 10px;
     }
 
