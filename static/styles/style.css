@@ -40,8 +40,7 @@ body {
         background-image: url("../img/background2.jpg");
         background-size: 110%;
         background-repeat: no-repeat;
-        /* background-color: red; */
-
+        overflow: hidden;
         margin: 0;
         padding: 0;
         width: 100vw;
@@ -52,12 +51,12 @@ body {
         width: 100vw;
 
     }
-
-    body main {
+    /* ALs ik deze uit zet is error goed maar de andere pages niet */
+    /* body main {
         margin: 0;
         padding: 0;
         width: 100vw;
-    }
+    } */
 }
 
 main{
@@ -101,10 +100,9 @@ h4{
 
 }
 
-.profileheader > img{
+/* .profileheader > img{
     width: 30%;
     background-color: blue;
-    /* padding: 50px; */
     margin: 0;
     flex-wrap: wrap;
     flex-direction: row;
@@ -120,11 +118,16 @@ h4{
 
     flex-wrap: wrap;
     flex-direction: row;
-} 
+}  */
 
-.profileheader .logout {
+/* .profileheader .logout {
     background-image: url(../static/img/logoutbutton.svg);
+} */
+
+.profileheader > form > button > img {
+    width: 20%;
 }
+
 
 .wrapper{
     position: relative;
@@ -535,7 +538,7 @@ form input.firsttype:focus{
         margin-left: auto;
         max-width: 30%;
         /* width: 100%; */
-        padding: 0px 10px;
+        /* padding: 0px 10px; */
     }
 
     form{
@@ -724,12 +727,17 @@ font-size: 1.2rem;
     width: 80%;
 }
 
+@media only screen and (min-width: 600px) {
+
+
+
+}
 
 .registreer{
     background-color: #FA4E69;
     border-radius: 10px;
     margin: 50px;
-    padding: 10px;
+    padding: 10px 40px;
     width: 50%;
     color: white;
     text-decoration: none;

@@ -10,11 +10,13 @@
     <div class="wrapper">
         <p>Hey <%= data.firstName %> !</p>
      <header class="profileheader" >
-            <img src="../static/img/logoutbutton.svg" alt="">
-            <img src="../static/img/cam.png" alt="">
+            <!-- <img src="../static/img/logoutbutton.svg" alt="">
+            <img src="../static/img/cam.png" alt=""> -->
             <a href="/logout" src="../static/img/logoutbutton.svg">Log out</a>
             <form action="/logout" method="POST">
-                <button class="logout" type="submit">Log out</button>
+                <button class="logout" type="submit">
+                    <img src="../static/img/logoutbutton.svg" alt="">
+                </button>
             </form>
      </header>
 
@@ -68,7 +70,6 @@
 
         <label for="password">Wachtwoord</label>
         <input type="password" name="password" placeholder="Password" required><%= data.password %>
-<%= data.firstName %>
         <a class="next" href="profileedit">Edit</a>
     </form>
     </main>
