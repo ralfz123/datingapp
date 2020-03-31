@@ -26,7 +26,7 @@
 
 // }
 
-// Beschrijven wat er gebeurd
+// Variabelen declareren
 var fieldset = document.getElementsByTagName('fieldset');
 var button = document.getElementsByTagName('button');
 // var buttonOne = document.getElementsByClassName("back");
@@ -36,7 +36,7 @@ var form = document.getElementsByTagName('form');
 form.onsubmit =()=>{return false};
 
 
-// Beschrijven wat er gebeurd
+// When the current fieldset is equal to 0, then:
 var current_fieldset = 0;
 fieldset[current_fieldset].style.display = "block";
 if (current_fieldset == 0){
@@ -84,7 +84,9 @@ button[0].onclick = ()=>{
         // button[0].style.display = "none";
         
     }
-    // if (current_fieldset <= 0){
+
+// Deze doet het niet, want wanneer op 2e scherm op 'terug' geklikt wordt, gaat hij terug naar 1e scherm en gelijk door naar ('/')
+    // if (current_fieldset <= 0) {
     //     location.href = ('/');
     // }
 }
