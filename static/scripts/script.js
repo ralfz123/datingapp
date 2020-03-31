@@ -26,7 +26,7 @@
 
 // }
 
-// Variabelen declareren
+// Declare variables
 var fieldset = document.getElementsByTagName('fieldset');
 var button = document.getElementsByTagName('button');
 // var buttonOne = document.getElementsByClassName("back");

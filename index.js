@@ -182,7 +182,7 @@ function makeUser(req, res) {
         } else {
             console.log('User added');
             console.log(data);
-            res.render('registreer_p4.ejs');
+            res.redirect('/registreer_p4');
         }
     });
 }
