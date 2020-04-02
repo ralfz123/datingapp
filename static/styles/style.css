@@ -439,16 +439,9 @@ fieldset {
 
 
 
-fieldset.p1{
-    border: none;
-    display: flex;
-    text-align: left;
-    display: flex;
-}
 
-fieldset.p1 input::placeholder{
-    color: rgba(92, 92, 92, 0.5);
-}
+
+
 
 legend{
     display: none;
@@ -475,42 +468,8 @@ input[type="radio"].toggle {
 }
 
 
-form.p2 fieldset label{
-    max-width: 70%;
-    text-align: center;
-    /* background: red; */
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 50px 0px 10px 0px;
-    padding: 50px 0px 5px 0px;
-    border: 1px solid transparent;
-    /* border-bottom: 1px solid #FD2755; */
-    font-size: 1.7rem;
-    cursor: pointer;
-    /* font-family:omnes-pro, sans-serif; */
-    font-weight: 200;
-    margin: 0 auto;
-    /* margin:10px 0px; */
-    
-}
-form.p2 fieldset label:nth-child(6){
-    max-width: 70%;
-    text-align: center;
-    /* background: red; */
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 50px 0px 10px 0px;
-    padding: 50px 0px 5px 0px;
-    border: 1px solid transparent;
-    /* border-bottom: 1px solid #FD2755; */
-    font-size: 1.7rem;
-    cursor: pointer;
-    font-family:'Kalam';
-    font-weight: 200;
-    margin: 0 auto;
-    /* margin:10px 0px; */
-    
-}
+
+
 
 
 
@@ -526,22 +485,7 @@ form fieldset input{
     border-bottom: 1px solid #FD2755;
     font-size: 1rem;
 }
-form fieldset.p1 {
-    margin: 0px 20px;
-}   
 
-form fieldset.p1 .firsttype{
-    text-align: left;
-    /* background: blue; */
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 5px 50px 10px 5px;
-    border: 1px solid transparent;
-    border-bottom: 1px solid #FD2755;
-    font-size: 1rem;
-    cursor: pointer;
-}
 
 .container {
     display: block;
@@ -565,43 +509,16 @@ form fieldset.p1 .firsttype{
 
 
 
-form fieldset.p1 input[type="radio"]{
-  position: absolute;
-  opacity: 20;
-  cursor: pointer;
-  height: 25px;
-  width: 21px;
-  background-color: red;
-  margin-left: 50px;
-}
-form fieldset.p1 input[type="radio"]:focus{
-   box-shadow: none;
-  }
 
 
-form.p2 fieldset input{
-    text-align: left;
-    flex-wrap: wrap;
-    justify-content: center;
-    /* margin: 0; */
-    padding: 5px 50px 10px 5px;
-    border: 1px solid transparent;
-    border-bottom: 1px solid #FD2755;
-    font-size: 1rem;
-    cursor: pointer;
-    
-}
 
 
-form.p2 fieldset input:focus{
-    border: 1px solid #FD2755;
-    outline: none;
-    transition: ease-in-out 0.3s;
-}
 
-form.p2 fieldset input::placeholder{
-    color: rgba(92, 92, 92, 0.5);
-}
+
+
+
+
+
 
 /* pseudo class voor interactie */
 form input:focus{
@@ -610,11 +527,7 @@ form input:focus{
     transition: ease-in-out 0.3s;
 }
 
-form input.firsttype:focus{
-    border: 1px solid #FD2755;
-    outline: none;
-    transition: ease-in-out 0.3s;
-}
+
 
 
 @media only screen and (min-width: 600px) {
@@ -630,27 +543,8 @@ form input.firsttype:focus{
         width: 30%;
         height: 50%;
     }
-    form.p2{
-        display: flex;
-    }
-    form.p2 fieldset {
-        margin-left: 68%;
-        width: 30%;
-        text-align: left;
-        /* background: blue; */
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: flex-end;
-        /* margin: 0; */
-        padding: 5px 50px 10px 5px;
-        /* border: 1px solid black; */
-        border-radius:10px;
-        box-shadow:  3px 3px 3px 3px #ccc;
-        /* 0 2px 7px 0 rgba(0,0,0,0.2) */
-        background: white;
-        font-size: 1rem;
-        cursor: pointer;
-    } 
+    
+     
     
 
 
@@ -664,7 +558,7 @@ form input.firsttype:focus{
 
 
 
-button{
+button {
     text-align: center;
     margin: auto;
     margin-top: 15px;
@@ -818,7 +712,7 @@ font-size: 1.2rem;
 
 }
 
-.registreer{
+.registreer {
     background-color: #FA4E69;
     border-radius: 10px;
     margin: 50px;
