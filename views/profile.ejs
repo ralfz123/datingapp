@@ -22,7 +22,7 @@
         <form class="profileform" action="" method="POST">
         <legend>Wie ben jij?</legend>
         <label for="firstName">Voornaam</label>
-        <input type="text" name="firstName" placeholder="Voornaam" value="<%= data.firstName %>" disabled> 
+        <input class="voornaam" type="text" name="firstName" placeholder="Voornaam" value="<%= data.firstName %>" disabled> 
 
 
         <label for="age">Leeftijd</label>
@@ -67,7 +67,7 @@
     </main>
 
     </div>
-    <% include('tail') %>
+    <%- include ('tail.ejs') %>
  
 </body>
 
