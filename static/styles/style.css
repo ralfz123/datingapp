@@ -312,6 +312,21 @@ fieldset {
 
 
 
+.profileform a.enableButton {
+    background-color: #FA4E69;
+    border-radius: 10px;
+    margin: 0;
+    padding: 10px;
+    width: 20%;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 300;
+    box-shadow: 3px 3px 5px grey;
+    margin: 25px 50px 6px 50px;
+}
+
+
 /********************
     MULTI STEP FORM
 ********************/

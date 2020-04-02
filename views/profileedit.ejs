@@ -8,65 +8,62 @@
 
 <body>
     <div class="wrapper">
-<p>hi <%= data.firstName %> </p>
      <header class="profileheader" >
-            <img src="../static/img/logoutbutton.svg" alt="">
-            <img src="../static/img/cam.png" alt="">
+        <p>Hey <%= data.firstName %> !</p>
+            <img src="../static/img/cam.png" alt=""> 
+            <form action="/logout" method="POST">
+                <button type="submit">
+                    <img src="../static/img/logoutbutton.svg" alt="">
+                </button>
+            </form>
      </header>
 
     <main>
-        <form action="">
+        <form class="profileform" action="profile" method="POST">
         <legend>Wie ben jij?</legend>
         <label for="firstName">Voornaam</label>
-        <input class="firsttype" type="text" name="firstName" placeholder="Voornaam" required> <%= data.firstName %>
+        <input type="text" name="firstName" placeholder="Voornaam" value="<%= data.firstName %>"> 
 
 
         <label for="age">Leeftijd</label>
-        <input type="number" name="age" placeholder="Leeftijd" required>
+        <input type="number" name="age" placeholder="Leeftijd" value="<%= data.age %>">
 
 
         <label for="hometown">Plaatsnaam</label>
-        <input type="text" name="hometown" placeholder="Plaatsnaam" required>
+        <input type="text" name="hometown" placeholder="Plaatsnaam" value="<%= data.hometown %>">
 
 
         <label for="gender">Geslacht</label>
 
-        <input type="radio" name="gender" value="man" checked="checked" required>
-        <label class="man" for="man">Man</label>
-        <span class="checkmark"></span>
+        <label class="radioGender" for="man">Man</label>
+        <input type="radio" name="gender" value="man" value="<%= data.gender %>" checked="checked">
 
-        <input type="radio" name="gender" value="vrouw" required>
-        <label for="vrouw">Vrouw</label>
-        <span class="checkmark"></span>
+        <label class="radioGender" for="vrouw">Vrouw</label>
+        <input type="radio" name="gender" value="vrouw" value="<%= data.gender %>">
 
-        <input type="radio" name="gender" value="beide" required>
-        <label for="beide">Beide</label>
-        <span class="checkmark"></span>
+        <label class="radioGender" for="beide">Beide</label>
+        <input type="radio" name="gender" value="beide" value="<%= data.gender %>">
 
         
         <label for="searchSex">Zoekt naar</label>
 
-        <input type="radio" name="searchSex" value="man" checked="checked" required>
-        <label for="man">Man</label>
-        <span class="checkmark"></span>
+        <label class="radioGender" for="man">Man</label>
+        <input type="radio" name="searchSex" value="man" value="<%= data.searchSex %>" checked="checked">
 
-        <input type="radio" name="searchSex" value="vrouw" required>
-        <label for="vrouw">Vrouw</label>
-        <span class="checkmark"></span>
+        <label class="radioGender" for="vrouw">Vrouw</label>
+        <input type="radio" name="searchSex" value="vrouw" value="<%= data.searchSex %>">
 
-        <input type="radio" name="searchSex" value="beide" required>
-        <label for="beide">Beide</label>
-        <span class="checkmark"></span>
-
+        <label class="radioGender" for="beide">Beide</label>
+        <input type="radio" name="searchSex" value="beide" value="<%= data.searchSex %>">
 
         <label for="email">E-mail</label>
-        <input type="text" name="email" placeholder="E-mailadres" required>
+        <input type="text" name="email" placeholder="E-mailadres" value="<%= data.email %>">
 
         <label for="password">Wachtwoord</label>
-        <input type="password" name="password" placeholder="Password" required>
-
-        <a class="next" href="profile">Back</a>
-        </form>
+        <input type="password" name="password" placeholder="Password" value="<%= data.password %>">
+        <button type="submit">Opslaan</button>
+        <a class="next" href="profile"></a>
+    </form>
     </main>
 
     </div>

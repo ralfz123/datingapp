@@ -8,6 +8,14 @@ var form = document.getElementsByTagName('form');
 form.onsubmit =()=>{return false};
 
 
+var enableButton = document.getElementsByClassName('enableButton');
+
+enableButton.addEventListener("click", deleteDisable);
+
+function deleteDisable() {
+    document.getElementsByClassName('profileform').disabled = false;
+}
+
 // When the current fieldset is equal to 0, then:
 var current_fieldset = 0;
 fieldset[current_fieldset].style.display = "block";
