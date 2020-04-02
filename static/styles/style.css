@@ -90,7 +90,7 @@ h4{
 
 .profileheader{
     background-image: linear-gradient(#B8456E, #FA4E6A);
-    box-shadow: 0 6px 11px 6px rgba(0,0,0,0.25);
+    box-shadow: 4px 5px 6px rgba(0,0,0,0.25);
     /* z-index: 10; */
     padding: 50px 0px;
     border-radius: 10px;
@@ -99,6 +99,7 @@ h4{
     /* width: 100vw; */
     /* padding-bottom: 140px; */
     height: 218px;
+    margin-bottom: 1rem;
 }
 
  /* .profileheader > img{
@@ -228,14 +229,59 @@ fieldset {
     text-align: left;
     margin: 0;
     padding: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
 }
+
+.profileform label {
+    margin: 0;
+    padding: 0;
+    font-size: 0.7rem;
+
+}
+
+.profileform label:nth-child(6){
+    color: #B8456E;
+}
+
 
 .profileform input {
+    margin: 0;
+    padding: 0;
+    width: 30%;
+    height: 20%;
+    font-size: 1rem;
+    margin-right: 1em;
+    margin-left: 0.3em;
+    margin-bottom: 1em;
 
 }
 
-.profileform input:disabled{
-    
+.profileform input[type="radio"] {
+    margin: 0;
+    padding: 0;
+    width: 15px;
+    height: 15px;
+
+}
+
+.profileform input:nth-child(7) {
+    color: blue;
+
+
+}
+
+.profileform input:focus {
+    color: #B8456E;
+    transition: ease-in 0.5s;
+    transform: none;
+    width: 30%;
+    border: 2px solid #FD2755;
+    outline: none;
+
 }
 
 
