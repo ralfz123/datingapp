@@ -247,6 +247,10 @@ fieldset {
     color: #B8456E;
 }
 
+.profileform label.radioGender {
+    font-size: 1rem;
+    margin: 0px 2px;
+}
 
 .profileform input {
     margin: 0;
@@ -265,6 +269,7 @@ fieldset {
     padding: 0;
     width: 15px;
     height: 15px;
+    padding-top: 1.6em;
 
 }
 
@@ -275,15 +280,35 @@ fieldset {
 }
 
 .profileform input:focus {
-    color: #B8456E;
-    transition: ease-in 0.5s;
-    transform: none;
-    width: 30%;
-    border: 2px solid #FD2755;
     outline: none;
+    margin: 0;
+    padding: 0;
+    margin-right: 1em;
+    margin-left: 0.3em;
+    margin-bottom: 1em;
+    width: 30%;
+    /* height: 20%; */
+    color: #B8456E;
+    /* transition: ease-in 0.5s; */
+    /* transform: none; */
+    /* border: 1px solid transparent; */
+    border-bottom: 1px solid #FD2755;
 
 }
 
+.profileform input[type="radio"]:focus {
+    margin: 0;
+    padding: 0;
+    width: 15px;
+    height: 15px; 
+    padding-top: 1.6em;   
+    color: #B8456E;
+    /* transition: ease-in 0.5s; */
+    /* transform: none; */
+    /* border: 2px solid #FD2755; */
+    outline: none;
+
+}
 
 
 
@@ -521,7 +546,7 @@ form fieldset input{
 
 
 /* pseudo class voor interactie */
-form input:focus{
+form.registratepage input:focus, form.inlog input:focus {
     border: 1px solid #FD2755;
     outline: none;
     transition: ease-in-out 0.3s;
