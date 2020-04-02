@@ -22,52 +22,46 @@
         <form class="profileform" action="">
         <legend>Wie ben jij?</legend>
         <label for="firstName">Voornaam</label>
-        <input class="firsttype" type="text" name="firstName" placeholder="Voornaam" required disabled> <%= data.firstName %>
+        <input class="firsttype" type="text" name="firstName" placeholder="Voornaam" value="<%= data.firstName %>" required > 
 
 
         <label for="age">Leeftijd</label>
-        <input type="number" name="age" placeholder="Leeftijd" required><%= data.age %>
+        <input type="number" name="age" placeholder="Leeftijd" value="<%= data.age %>" required>
 
 
         <label for="hometown">Plaatsnaam</label>
-        <input type="text" name="hometown" placeholder="Plaatsnaam" required><%= data.hometown %>
+        <input type="text" name="hometown" placeholder="Plaatsnaam" value="<%= data.hometown %>"  required>
 
 
-        <label for="gender">Geslacht</label><%= data.gender %>
+        <label for="gender">Geslacht</label>
 
-        <input type="radio" name="gender" value="man" checked="checked" required>
+        <input type="radio" name="gender" value="man" value="<%= data.gender %>" checked="checked" required>
         <label class="man" for="man">Man</label>
-        <span class="checkmark"></span>
 
-        <input type="radio" name="gender" value="vrouw" required>
+        <input type="radio" name="gender" value="vrouw" value="<%= data.gender %>" required>
         <label for="vrouw">Vrouw</label>
-        <span class="checkmark"></span>
 
-        <input type="radio" name="gender" value="beide" required>
+        <input type="radio" name="gender" value="beide" value="<%= data.gender %>" required>
         <label for="beide">Beide</label>
-        <span class="checkmark"></span>
 
         
         <label for="searchSex">Zoekt naar</label><%= data.searchSex %>
 
-        <input type="radio" name="searchSex" value="man" checked="checked" required>
+        <input type="radio" name="searchSex" value="man" value="<%= data.gender %>" checked="checked" required>
         <label for="man">Man</label>
-        <span class="checkmark"></span>
 
-        <input type="radio" name="searchSex" value="vrouw" required>
+        <input type="radio" name="searchSex" value="vrouw" value="<%= data.gender %>" required>
         <label for="vrouw">Vrouw</label>
-        <span class="checkmark"></span>
 
-        <input type="radio" name="searchSex" value="beide" required>
+        <input type="radio" name="searchSex" value="beide" value="<%= data.gender %>" required>
         <label for="beide">Beide</label>
-        <span class="checkmark"></span>
 
 
         <label for="email">E-mail</label>
-        <input type="text" name="email" placeholder="E-mailadres" required><%= data.email %>
+        <input type="text" name="email" placeholder="E-mailadres" value="<%= data.email %>" required>
 
         <label for="password">Wachtwoord</label>
-        <input type="password" name="password" placeholder="Password" required><%= data.password %>
+        <input type="password" name="password" placeholder="Password" value="<%= data.password %>" required>
         <a class="next" href="profileedit">Edit</a>
     </form>
     </main>
