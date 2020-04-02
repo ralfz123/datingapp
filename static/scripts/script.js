@@ -1,20 +1,9 @@
 // Declare variables
 var fieldset = document.getElementsByTagName('fieldset');
 var button = document.getElementsByTagName('button');
-// var buttonOne = document.getElementsByClassName("back");
-// var buttonTwo = document.getElementsByClassName("next");
 var li = document.getElementsByTagName('li');
 var form = document.getElementsByTagName('form');
 form.onsubmit =()=>{return false};
-
-
-var enableButton = document.getElementsByClassName('enableButton');
-
-enableButton.addEventListener("click", deleteDisable);
-
-function deleteDisable() {
-    document.getElementsByClassName('voornaam').disabled = false;
-}
 
 
 // When the current fieldset is equal to 0, then:

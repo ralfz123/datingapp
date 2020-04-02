@@ -19,7 +19,7 @@
      </header>
 
     <main>
-        <form class="profileform" action="" method="POST">
+        <form class="profileform" action="/profile" method="POST">
         <legend>Wie ben jij?</legend>
         <label for="firstName">Voornaam</label>
         <input class="voornaam" type="text" name="firstName" placeholder="Voornaam" value="<%= data.firstName %>" disabled> 
@@ -61,14 +61,13 @@
 
         <label for="password">Wachtwoord</label>
         <input type="password" name="password" placeholder="Password" value="<%= data.password %>" disabled>
-        <button type="button" class="enableButton" >Edit</button>
+        <button type="submit" class="enableButton">Edit</button>
         <!-- href="profileedit" -->
     </form>
     </main>
 
     </div>
-    <%- include ('tail.ejs') %>
- 
+    <script type= "text/javascript" src="../static/scripts/profile.js"></script> 
 </body>
 
 </html>

@@ -32,7 +32,7 @@ mongo.MongoClient.connect(uri, function(err, client) {
 
   db = client.db(process.env.DB_NAME)
   usersMultiple = db.collection(process.env.DB_NAME);
-  usersMultiple.createIndex({ username: 1 }, {unique: true});
+  usersMultiple.createIndex({ firstName: 1 }, {unique: true});
 });
 
 
@@ -117,8 +117,6 @@ app.post('/logout', function (req, res) {
     res.redirect('/');
     console.log("Uitgelogd!")
 });
-
-
 
 // getting data from database
 function gettingData(req, res, next){
