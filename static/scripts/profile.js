@@ -10,4 +10,5 @@
 // }
 // }
 
-var enableButton = document.getElementsByClassName('enableButton');
+// var enableButton = document.getElementsByClassName('enableButton');
+console.log('Hello world!')
