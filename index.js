@@ -126,7 +126,7 @@ function editProfile (req, res) {
     if (req.session.userId) {
         console.log('heeft session gevonden');
 
-        usersMultiple
+        db.collection('users')
             .findOne({
                 firstName: req.session.userId
             })
@@ -134,10 +134,10 @@ function editProfile (req, res) {
                 console.log('heeft data gevonden');
                 console.log(data);
                 if (data) {
-                    const query = { firstName: req.session.userId };
+                    const myQuery = { firstName: req.session.userId };
                     console.log('heeft QUERY gevonden');
-                    const update = {
-                        '$set': {
+                    const updateValues = {
+                        $set: {
                             'firstName' : req.body.firstName,
                             'gender' : req.body.gender,
                             'searchSex' : req.body.searchSex,
@@ -149,12 +149,13 @@ function editProfile (req, res) {
                         }
                     }
                     const options = { returnNewDocument: true };
-                    usersMultiple
-                        .findOneAndUpdate(query, update, options)
+                    db.collection('users')
+                        .findOneAndUpdate(myQuery, updateValues, options)
                         .then(updatedDocument => {
                             if (updatedDocument) {
                                 res.render('profile.ejs');
-                        } return updatedDocument;
+                        } 
+                        return updatedDocument;
                     })
                     .catch(err => console.error('FAILED UPDATING VIA: ${err}'));
                 }
