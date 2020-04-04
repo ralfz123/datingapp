@@ -128,7 +128,7 @@ function editProfile (req, res) {
 
         db.collection('users')
             .findOne({
-                firstName: req.session.userId
+                _id : ObjectID(req.session.userId)
             })
             .then(data => {
                 console.log('heeft data gevonden');
