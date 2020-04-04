@@ -153,7 +153,8 @@ function editProfile (req, res) {
                         .findOneAndUpdate(myQuery, updateValues, options)
                         .then(updatedDocument => {
                             if (updatedDocument) {
-                                res.redirect('/profile');
+                                res.render('profile.ejs' , {data});
+
                         } 
                         return updatedDocument;
                     })
