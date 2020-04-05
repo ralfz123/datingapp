@@ -54,9 +54,10 @@ app.use(
 );
 
 
-
-// routing 
-app.get('/', function(req, res) {res.render('index.ejs')});
+// Routing 
+app.get('/', function(req, res) {
+    res.render('index.ejs')
+});
 app.get('/profile', function(req, res) {
     console.log(req.session.userId);
     db.collection('users')
@@ -72,37 +73,13 @@ app.get('/profile', function(req, res) {
     });
 });
 
-// app.get('/profileedit', function(req, res) {
-//     console.log('Bewerken');
-//     db.collection('users');
-//         .update({
-//             _id : ObjectID(req.session.userId);
-//     })
-//     .then(data=>{
-//         res.render('profileedit.ejs' , {data});
-//     })
-//     .catch(err=>{
-//         console.log(err);
-//         res.redirect('404error');
-//     });
-// });
-
 
 app.get('/registreer_p1', function(req, res) {
     res.render('registreer_p1.ejs');
 });
-
 app.get('/registreer_p4', function(req, res) {
     res.render('registreer_p4.ejs');
 });
-app.get('*', function(req, res) {
-    res.render('404error');
-});
-
-// app.get('/logout', logout);
-
-// app.post('/test.ejs', addInlog);
-// app.get('/test', gettingData);
 app.post('/', login);
 app.post('/registrate', upload.single('photo'), urlencodedParser, makeUser);
 app.post('/logout', function (req, res) {
@@ -110,8 +87,10 @@ app.post('/logout', function (req, res) {
     res.redirect('/');
     console.log("Uitgelogd!")
 });
-
 app.post('/profile', editProfile);
+app.get('*', function(req, res) {
+    res.render('404error');
+});
 
 function editProfile (req, res) {
     const query = {  _id : ObjectID(req.session.userId)};
@@ -146,20 +125,6 @@ function editProfile (req, res) {
     })
 }
 
-// getting data from database
-function gettingData(req, res, next){
-    db.collection('users').find().toArray(done)
-        
-    function done (err, data){
-        if (err){
-            next(err)
-        } else{
-            console.log(data);
-            res.render('test.ejs', {users: data})
-        }
-    }
-}
-
 
 function login (req, res){
     db.collection('users')
@@ -180,7 +145,7 @@ function login (req, res){
     });
 }
 
-// register and the app makes an user in the DB
+// Register and the app makes an user in the DB
 function makeUser(req, res) {
     let firstName = req.body.firstName;
     let gender = req.body.gender;
@@ -213,24 +178,5 @@ function makeUser(req, res) {
     });
 }
 
-
-// function logout(req, res){
-//     req.session.destroy(function (err){
-//         if (err){
-//             console.log(err)
-//             next (err)
-//         } else{
-//             res.redirect('/')
-//         }
-//     })
-// }
-
-
-// wachtwoord vergeten--> nieuwe instellen
-// db.collection('users').updateOne({ id: 1 } { $Set { password: req.body.password } })
-
-
 // Server is listening on port:
 app.listen(port, () => console.log('listening on port ' + port));
-
-console.log(cc('LEUKE-OPDRACHT'));
