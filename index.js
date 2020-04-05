@@ -1,5 +1,4 @@
 //import express packages
-const cc = require ('camelcase');
 const express = require('express');
 const app = express();
 const port = 8000;
