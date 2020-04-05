@@ -91,12 +91,7 @@ app.get('/profile', function(req, res) {
 app.get('/registreer_p1', function(req, res) {
     res.render('registreer_p1.ejs');
 });
-app.get('/registreer_p2', function(req, res) {
-    res.render('registreer_p2.ejs');
-});
-app.get('/registreer_p3', function(req, res) {
-    res.render('registreer_p3.ejs');
-});
+
 app.get('/registreer_p4', function(req, res) {
     res.render('registreer_p4.ejs');
 });
