@@ -113,51 +113,85 @@ app.post('/logout', function (req, res) {
 
 app.post('/profile', editProfile);
 
+// function editProfile (req, res) {
+//     console.log('bezig met zoeken...');
+//     console.log(req.session.userId);
+//     if (req.session.userId) {
+//         console.log('heeft session gevonden');
+
+//         db.collection('users')
+//             .findOne({
+//                 _id : ObjectID(req.session.userId)
+//             })
+//             .then(data => {
+//                 console.log('heeft data gevonden');
+//                 console.log(data);
+//                 if (data) {
+//                     const myQuery = { firstName: req.session.userId };
+//                     console.log('heeft QUERY gevonden');
+//                     const updateValues = {
+//                         $set: {
+//                             'firstName' : req.body.firstName,
+//                             'gender' : req.body.gender,
+//                             'searchSex' : req.body.searchSex,
+//                             'age' : req.body.age,
+//                             'hometown' : req.body.hometown,
+//                             'email' : req.body.email,
+//                             'password' : req.body.password,
+//                             'photo' : req.body.photo
+//                         }
+//                     }
+//                     const options = { returnNewDocument: true };
+//                     db.collection('users')
+//                         .findOneAndUpdate(myQuery, updateValues, options)
+//                         .then(updatedDocument => {
+//                             if (updatedDocument) {
+//                                 res.render('profile.ejs' , {data});
+
+//                         } 
+//                         return updatedDocument;
+//                     })
+//                     .catch(err => console.error('FAILED UPDATING VIA: ${err}'));
+//                 }
+//             })
+//             .catch(err => {
+//                 console.log(err);
+//             });
+//     }
+// }
+
 function editProfile (req, res) {
-    console.log('bezig met zoeken...');
-    console.log(req.session.userId);
-    if (req.session.userId) {
-        console.log('heeft session gevonden');
-
-        db.collection('users')
-            .findOne({
-                _id : ObjectID(req.session.userId)
-            })
-            .then(data => {
-                console.log('heeft data gevonden');
-                console.log(data);
-                if (data) {
-                    const myQuery = { firstName: req.session.userId };
-                    console.log('heeft QUERY gevonden');
-                    const updateValues = {
-                        $set: {
-                            'firstName' : req.body.firstName,
-                            'gender' : req.body.gender,
-                            'searchSex' : req.body.searchSex,
-                            'age' : req.body.age,
-                            'hometown' : req.body.hometown,
-                            'email' : req.body.email,
-                            'password' : req.body.password,
-                            'photo' : req.body.photo
-                        }
-                    }
-                    const options = { returnNewDocument: true };
-                    db.collection('users')
-                        .findOneAndUpdate(myQuery, updateValues, options)
-                        .then(updatedDocument => {
-                            if (updatedDocument) {
-                                res.render('profile.ejs' , {data});
-
-                        } 
-                        return updatedDocument;
-                    })
-                    .catch(err => console.error('FAILED UPDATING VIA: ${err}'));
-                }
-            })
-            .catch(err => {
-                console.log(err);
-            });
+    const query = { firstName: req.session.userId };
+    console.log(req.session.userId)
+    // console.log(data)
+        const updatedValues = {
+                $set: {
+                 'firstName' : req.body.firstName,
+                 'gender' : req.body.gender,
+                 'searchSex' : req.body.searchSex,
+                 'age' : req.body.age,
+                 'hometown' : req.body.hometown,
+                 'email' : req.body.email,
+                 'password' : req.body.password,
+                 'photo' : req.body.photo
+        }
     }
+    console.log(updatedValues);
+    db.collection('users')
+        .findOneAndUpdate(query, updatedValues)
+        .then(data => {
+           console.log('heeft data gevonden');
+           console.log(query);
+           console.log(data);
+        // updatedValues = data._id
+        // req.session.userId = data._id;
+             if (data){
+                 res.render('profile.ejs' , {data});
+            }
+        })
+        .catch(err =>{
+            console.log(err)
+    })
 }
 
 // getting data from database
@@ -182,7 +216,7 @@ function login (req, res){
             password: req.body.password
     })
     .then(data=> {
-            console.log('Ingelogd!');
+            console.log('Ingelogd als ' + data.firstName);
             req.session.userId = data._id;
             if (data){
                 res.redirect('/profile');
