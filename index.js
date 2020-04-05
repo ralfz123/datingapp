@@ -4,12 +4,10 @@ const express = require('express');
 const app = express();
 const port = 8000;
 const path = require('path');
-const slug = require('slug'); // idk of ik ga gebruiken
 const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({
     extended: true
 });
-const mongoose = require ('mongoose'); // idk of ik ga gebruiken
 const multer= require('multer');
 const upload = multer({ dest: 'uploads/' });
 const mongo = require ('mongodb');
