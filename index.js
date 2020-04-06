@@ -8,7 +8,7 @@ const urlencodedParser = bodyParser.urlencoded({
     extended: true
 });
 const multer= require('multer');
-const upload = multer({ dest: 'uploads/' });
+const upload = multer();
 const mongo = require ('mongodb');
 const session = require ('express-session');
 let usersMultiple;
