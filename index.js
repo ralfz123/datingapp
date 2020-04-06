@@ -15,7 +15,6 @@ let usersMultiple;
 const ObjectID = mongo.ObjectID;
 
 
-
 // Database MongoDB
 require('dotenv').config();      
 
@@ -24,14 +23,13 @@ const uri = process.env.DB_URI;
 
 mongo.MongoClient.connect(uri, function(err, client) {
   if (err) {
-    throw err
+    throw err;
   }
 
-  db = client.db(process.env.DB_NAME)
+  db = client.db(process.env.DB_NAME);
   usersMultiple = db.collection(process.env.DB_NAME);
   usersMultiple.createIndex({ firstName: 1 }, {unique: true});
 });
-
 
 
 // Middelware set-up
@@ -57,7 +55,7 @@ app.use(
 
 // Routing 
 app.get('/', function(req, res) {
-    res.render('index.ejs')
+    res.render('index.ejs');
 });
 app.get('/registreer_p1', function(req, res) {
     res.render('registreer_p1.ejs');
@@ -134,7 +132,7 @@ function login (req, res){
 function logout (req, res) {
     req.session.destroy();
     res.redirect('/');
-    console.log("Uitgelogd!")
+    console.log('Uitgelogd!');
 }
 
 
@@ -158,7 +156,7 @@ function profile(req, res) {
 // Update profile page
 function editProfile (req, res) {
     const query = {  _id : ObjectID(req.session.userId)}; // the current user
-    console.log(req.session.userId)
+    console.log(req.session.userId);
     const updatedValues = { // the new data values
         $set: {
             'firstName' : req.body.firstName,
@@ -170,9 +168,8 @@ function editProfile (req, res) {
             'password' : req.body.password,
             'photo' : req.body.photo
         }
-    }
+    };
     console.log(updatedValues);
-
 
     db.collection('users')
         .findOneAndUpdate(query, updatedValues)
@@ -186,14 +183,14 @@ function editProfile (req, res) {
             }
         })
         .catch(err =>{
-            console.log(err)
-    })
+            console.log(err);
+    });
 }
 
 // Error
 function error(req, res) {
     res.render('404error');
-};
+}
 
 // Server is listening on port
 app.listen(port, () => console.log('listening on port ' + port));
