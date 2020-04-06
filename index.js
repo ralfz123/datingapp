@@ -75,24 +75,16 @@ app.get('*', error);
 
 // Register an account (inserted in DB)
 function makeUser(req, res) {
-    let firstName = req.body.firstName;
-    let gender = req.body.gender;
-    let searchSex = req.body.searchSex;
-    let age = req.body.age;
-    let hometown = req.body.hometown;
-    let email = req.body.email;
-    let password = req.body.password;
-    let photo = req.body.photo;
-
+   
     const data = {
-        'firstName' : firstName,
-        'gender' : gender,
-        'searchSex' : searchSex,
-        'age' : age,
-        'hometown' : hometown,
-        'email' : email,
-        'password' : password,
-        'photo' : photo
+        'firstName' : req.body.firstName,
+        'gender' : req.body.gender,
+        'searchSex' : req.body.searchSex,
+        'age' : req.body.age,
+        'hometown' : req.body.hometown,
+        'email' : req.body.email,
+        'password' : req.body.password,
+        'photo' : req.body.photo
     };
 
     db.collection('users').insertOne(data, function(err, collection){
