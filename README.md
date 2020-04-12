@@ -30,12 +30,7 @@ npm install
 
 # :computer: Usage
 1.   
-Run Find Your Match:  
-```
-npm run start
-```   
-or  
-Run developer mode:  
+Run the app:   
 ```
 npm run startdev
 ```
@@ -47,8 +42,8 @@ npm run startdev
 <img src="https://github.com/ralfz123/prototype_datingapp/blob/master/docs/readme/mobileinspect.png?raw=true" width="900" />
 
 # :chart_with_upwards_trend: Database structure
-<img src="https://github.com/ralfz123/prototype_datingapp/blob/master/docs/readme/db.png?raw=true" width="500" />
-<img src="https://github.com/ralfz123/prototype_datingapp/blob/master/docs/readme/objectdb.png?raw=true" width="500" />
+<img src="https://github.com/ralfz123/prototype_datingapp/blob/master/docs/readme/db.png?raw=true" width="300" />
+<img src="https://github.com/ralfz123/prototype_datingapp/blob/master/docs/readme/objectdb.png?raw=true" width="300" />
 
 
 # :file_folder: Links resources
