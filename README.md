@@ -29,8 +29,7 @@ npm install
 ```
 
 # :computer: Usage
-1.   
-Run the app:   
+1. Run the app   
 ```
 npm run startdev
 ```
