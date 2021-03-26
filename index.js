@@ -1,7 +1,7 @@
 // Import express packages
 const express = require('express');
 const app = express();
-const port = 8000;
+const PORT = process.env.PORT || 8000;
 const path = require('path');
 const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({
@@ -184,5 +184,5 @@ function error(req, res) {
     res.render('404error');
 }
 
-// Server is listening on port
-app.listen(port, () => console.log('listening on port ' + port));
+// Server is listening on PORT
+app.listen(PORT, () => console.log('listening on PORT ' + PORT));
